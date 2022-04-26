@@ -1,0 +1,2200 @@
+{
+    "data": {
+        "de": {
+            "header": {
+                "asWebComponent": true,
+                "isHeaderResponsive": true,
+                "isLoginWidgetHidden": true,
+                "showJobsLoginWidget": false,
+                "icons": {
+                    "backArrowIcon": {
+                        "name": "3024_arrow-left",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "closeIcon": {
+                        "name": "2043_cross",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "downArrowIcon": {
+                        "name": "2113_angle-small-down",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "menuIcon": {
+                        "name": "2070_burger-menu",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "rightArrowIcon": {
+                        "name": "3020_arrow-right",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "searchIcon": {
+                        "name": "2069_magnifying-glass",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "loginIcon": {
+                        "name": "2064_arrow-enter",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                },
+                "loginWidgetOptions": null,
+                "loginWidgetId": null,
+                "logo": {
+                    "logoLink": "https://www.post.ch/de/",
+                    "logoLinkTitle": "Die Post - zur Startseite",
+                    "logoSvg": "https://www.post.ch/-/media/portal-opp/global/logos/logo---die-post.svg?vs=2&sc_lang=de",
+                    "logoText": "Logo Die Post, zur Startseite"
+                },
+                "mobileMenu": {
+                    "text": "Menü"
+                },
+                "search": {
+                    "isSearchHidden": false,
+                    "searchPageUrl": "https://www.post.ch/de/pages/suche",
+                    "redirectPattern": "^[A-Za-z0-9.]{11,23}$",
+                    "searchBoxSuggestionsThreshold": "0",
+                    "searchBoxSuggestionsAllNumber": "7",
+                    "searchBoxSuggestionsCoveoNumber": "5",
+                    "placesRedirectUrl": "https://places.post.ch/?lang=de&service=places&needid=110.1&preselecttext=",
+                    "packageTrackingRedirectUrl": "https://service.post.ch/ekp-web/external/view/{trackingNumber}?lang=de",
+                    "searchHubName": "900-701 suche",
+                    "searchPipelineName": "Post v2"
+                },
+                "onlineServiceId": "topos",
+                "navMain": [
+                    {
+                        "flyout": [],
+                        "id": "9bc0275b-8c91-4e89-8c0c-5e80bb8097b8",
+                        "text": "Kundencenter",
+                        "title": "Kundencenter",
+                        "url": "https://www.post.ch/de/kundencenter/kundencenter",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [],
+                        "id": "0eb467aa-ded4-4259-9178-b67f1f211819",
+                        "text": "Onlinedienste",
+                        "title": "Onlinedienste",
+                        "url": "https://www.post.ch/de/kundencenter/onlinedienste",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [
+                            {
+                                "linkList": [
+                                    {
+                                        "id": null,
+                                        "target": null,
+                                        "title": "Onlinedienst starten",
+                                        "url": "https://places.post.ch/?lang=de"
+                                    }
+                                ],
+                                "title": null
+                            }
+                        ],
+                        "id": "flyout_os",
+                        "text": "Standorte und Öffnungszeiten",
+                        "title": "Standorte und Öffnungszeiten",
+                        "url": null
+                    }
+                ],
+                "navMeta": [
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Jobs",
+                        "url": "https://www.post.ch/de/jobs"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Über uns",
+                        "url": "https://www.post.ch/de/ueber-uns"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Hilfe und Kontakt",
+                        "url": "https://www.post.ch/de/hilfe-und-kontakt"
+                    },
+                    {
+                        "isActive": true,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Kundencenter",
+                        "url": "https://www.post.ch/de/kundencenter"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": true,
+                        "target": null,
+                        "text": "Home",
+                        "url": "https://www.post.ch/de/"
+                    }
+                ],
+                "navLang": [
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": true,
+                        "lang": "de",
+                        "text": "De",
+                        "title": "Deutsch",
+                        "url": "https://places.post.ch/?lang=de&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "fr",
+                        "text": "Fr",
+                        "title": "Français",
+                        "url": "https://places.post.ch/?lang=fr&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "it",
+                        "text": "It",
+                        "title": "Italiano",
+                        "url": "https://places.post.ch/?lang=it&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "en",
+                        "text": "En",
+                        "title": "English",
+                        "url": "https://places.post.ch/?lang=en&service=topos"
+                    }
+                ],
+                "translations": {
+                    "backButtonText": "Zurück",
+                    "closeButtonText": "Schliessen",
+                    "homeLinkTitle": "Home",
+                    "navLangAriaLabel": "Sprachnavigation",
+                    "navMainAriaLabel": "Hauptnavigation",
+                    "navMetaAriaLabel": "Metanavigation",
+                    "searchAriaLabel": "Diese Webseite durchsuchen",
+                    "flyoutSearchBoxFloatingLabel": "Sendungsnummer, Suchbegriff eingeben",
+                    "searchPlaceholder": "Suchbegriff eingeben",
+                    "searchSubmit": "Suche starten",
+                    "searchToggle": "Suche anzeigen",
+                    "searchToggleExpanded": "Suche ausblenden",
+                    "searchA11yLabelClosed": "Suche öffnen",
+                    "searchA11yLabelOpened": "Suche schliessen",
+                    "mobileNavToggleClose": "Navigation schliessen",
+                    "mobileNavToggleOpen": "Navigation öffnen",
+                    "nonResponsiveHeader": "Diese Seite ist nicht für mobile Geräte konzipiert.",
+                    "loginWidgetText": null
+                }
+            },
+            "breadcrumb": {
+                "a11yLabel": "Breadcrumb",
+                "asWebComponent": true,
+                "buttons": [
+                    {
+                        "svgIcon": {
+                            "name": "3033_question-mark",
+                            "classes": [],
+                            "additionalAttributes": [
+                                {
+                                    "name": "focusable",
+                                    "value": "false"
+                                }
+                            ]
+                        },
+                        "text": "Hilfe",
+                        "overlay": {
+                            "id": "help",
+                            "target": "https://www.post.ch/de/kundencenter/onlinedienste/standorte-und-oeffnungszeiten/info?modal=true",
+                            "closeText": "Schliessen",
+                            "closeIcon": {
+                                "name": "2043_cross",
+                                "classes": [],
+                                "additionalAttributes": [
+                                    {
+                                        "name": "focusable",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            "classes": [
+                                "ppm-breadcrumb-overlay__body--light"
+                            ],
+                            "additionalAttributes": []
+                        },
+                        "classes": [
+                            "btn-outline-secondary"
+                        ],
+                        "additionalAttributes": []
+                    }
+                ],
+                "isCentered": false,
+                "items": [
+                    {
+                        "text": "Startseite",
+                        "url": "https://www.post.ch/de/"
+                    },
+                    {
+                        "text": "Kundencenter",
+                        "url": "https://www.post.ch/de/kundencenter"
+                    },
+                    {
+                        "text": "Standorte und Öffnungszeiten",
+                        "url": "https://places.post.ch/?lang=de"
+                    }
+                ],
+                "linkLastBreadcrumbItem": false,
+                "svgIconArrowRightSmall": {
+                    "name": "2111_angle-small-right",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon",
+                        "ppm-breadcrumb-divider"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "svgIconHome": {
+                    "name": "2035_home",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "truncateButtonText": "Öffnen",
+                "classes": [],
+                "additionalAttributes": []
+            },
+            "footer": {
+                "title": "Fusszeile",
+                "asWebComponent": true,
+                "osLinks": {
+                    "serviceName": "Standorte und Öffnungszeiten",
+                    "links": []
+                },
+                "block": [
+                    {
+                        "columnType": "list",
+                        "title": "Direkt zu",
+                        "links": [
+                            {
+                                "url": "https://www.postfinance.ch/",
+                                "target": "_blank",
+                                "text": "PostFinance",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postauto.ch/",
+                                "target": "_blank",
+                                "text": "PostAuto",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://immobilien.post.ch/de",
+                                "target": "_blank",
+                                "text": "Immobilien",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://postcompanycars.post.ch/de",
+                                "target": "_blank",
+                                "text": "Post Company Cars",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "list",
+                        "title": "Mehr Post",
+                        "links": [
+                            {
+                                "url": "https://www.post.ch/de/ueber-uns/innovation",
+                                "target": "",
+                                "text": "Innovation",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/de/ueber-uns/verantwortung",
+                                "target": "",
+                                "text": "Verantwortung",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postshop.ch/shop/de",
+                                "target": "_blank",
+                                "text": "Shop",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/de/ueber-uns/medien",
+                                "target": "",
+                                "text": "Medien",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "contact",
+                        "title": "Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": null,
+                                "describe": "CHF 0.08/Min. vom Schweizer Festnetz",
+                                "hours": null,
+                                "links": null,
+                                "name": "phone",
+                                "number": "+41 848 888 888",
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "7.30–18.00 Uhr",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Montag bis Freitag",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "8.00–12.00 Uhr",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Samstag",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "Bildschirm teilen",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Live Support",
+                                "title": null
+                            }
+                        ]
+                    },
+                    {
+                        "columnType": "address",
+                        "title": "Adresse Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": "Post CH Netz AG<br/>Contact Center Post<br/>Wankdorfallee 4<br/>3030 Bern",
+                                "describe": null,
+                                "hours": null,
+                                "links": null,
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": null,
+                                "links": [
+                                    {
+                                        "url": "https://www.facebook.com/swisspost",
+                                        "icon": "8004_facebook",
+                                        "name": "Folgen Sie uns auf Facebook",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.instagram.com/swisspost/",
+                                        "icon": "8007_instagram",
+                                        "name": "Folgen Sie uns auf Instagram",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.youtube.com/swisspost",
+                                        "icon": "8002_youtube",
+                                        "name": "Folgen Sie uns auf Youtube",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.snapchat.com/add/swisspostjobs",
+                                        "icon": "8017_snapchat",
+                                        "name": "Folgen Sie uns auf Snapchat",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://twitter.com/PostSchweiz",
+                                        "icon": "8000_twitter",
+                                        "name": "Folgen Sie uns auf Twitter",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.xing.com/companies/dieschweizerischepost",
+                                        "icon": "8001_xing",
+                                        "name": "Folgen Sie uns auf Xing",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.linkedin.com/company/swiss-post",
+                                        "icon": "8005_linkedin",
+                                        "name": "Folgen Sie uns auf LinkedIn",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.kununu.com/ch/die-schweizerische-post",
+                                        "icon": "8008_kununu",
+                                        "name": "Folgen Sie uns auf Kununu",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    }
+                                ],
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": "Folgen Sie uns"
+                            }
+                        ]
+                    }
+                ],
+                "entry": {
+                    "text": "© 2022 Die Schweizerische Post AG"
+                },
+                "links": [
+                    {
+                        "url": "https://www.post.ch/de/pages/footer/barrierefreiheit-bei-der-post",
+                        "target": "",
+                        "text": "Barrierefreiheit",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/de/pages/footer/allgemeine-geschaeftsbedingungen-agb",
+                        "target": "",
+                        "text": "Allgemeine Geschäftsbedingungen",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/de/pages/footer/datenschutz-und-rechtliches",
+                        "target": "",
+                        "text": "Datenschutz und Rechtliches",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/de/pages/footer/impressum",
+                        "target": "",
+                        "text": "Impressum",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                ],
+                "classes": [],
+                "additionalAttributes": []
+            }
+        },
+        "fr": {
+            "header": {
+                "asWebComponent": true,
+                "isHeaderResponsive": true,
+                "isLoginWidgetHidden": true,
+                "showJobsLoginWidget": false,
+                "icons": {
+                    "backArrowIcon": {
+                        "name": "3024_arrow-left",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "closeIcon": {
+                        "name": "2043_cross",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "downArrowIcon": {
+                        "name": "2113_angle-small-down",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "menuIcon": {
+                        "name": "2070_burger-menu",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "rightArrowIcon": {
+                        "name": "3020_arrow-right",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "searchIcon": {
+                        "name": "2069_magnifying-glass",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "loginIcon": {
+                        "name": "2064_arrow-enter",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                },
+                "loginWidgetOptions": null,
+                "loginWidgetId": null,
+                "logo": {
+                    "logoLink": "https://www.post.ch/fr/",
+                    "logoLinkTitle": "La Poste – aller à la page d’accueil",
+                    "logoSvg": "https://www.post.ch/-/media/portal-opp/global/logos/logo---die-post.svg?vs=2&sc_lang=fr",
+                    "logoText": "Logo La Poste, aller à la page d’accueil"
+                },
+                "mobileMenu": {
+                    "text": "Menu"
+                },
+                "search": {
+                    "isSearchHidden": false,
+                    "searchPageUrl": "https://www.post.ch/fr/pages/suche",
+                    "redirectPattern": "^[A-Za-z0-9.]{11,23}$",
+                    "searchBoxSuggestionsThreshold": "0",
+                    "searchBoxSuggestionsAllNumber": "7",
+                    "searchBoxSuggestionsCoveoNumber": "5",
+                    "placesRedirectUrl": "https://places.post.ch/?lang=fr&service=places&needid=110.1&preselecttext=",
+                    "packageTrackingRedirectUrl": "https://service.post.ch/ekp-web/external/view/{trackingNumber}?lang=fr",
+                    "searchHubName": "900-701 suche",
+                    "searchPipelineName": "Post v2"
+                },
+                "onlineServiceId": "topos",
+                "navMain": [
+                    {
+                        "flyout": [],
+                        "id": "9bc0275b-8c91-4e89-8c0c-5e80bb8097b8",
+                        "text": "Espace clients",
+                        "title": "Espace clients",
+                        "url": "https://www.post.ch/fr/espace-clients/espace-clients",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [],
+                        "id": "0eb467aa-ded4-4259-9178-b67f1f211819",
+                        "text": "Services en ligne",
+                        "title": "Services en ligne",
+                        "url": "https://www.post.ch/fr/espace-clients/services-en-ligne",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [
+                            {
+                                "linkList": [
+                                    {
+                                        "id": null,
+                                        "target": null,
+                                        "title": "Démarrer le service en ligne",
+                                        "url": "https://places.post.ch/?lang=fr"
+                                    }
+                                ],
+                                "title": null
+                            }
+                        ],
+                        "id": "flyout_os",
+                        "text": "Sites et heures d'ouverture",
+                        "title": "Sites et heures d'ouverture",
+                        "url": null
+                    }
+                ],
+                "navMeta": [
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Emplois",
+                        "url": "https://www.post.ch/fr/emplois"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Notre profil",
+                        "url": "https://www.post.ch/fr/notre-profil"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Aide et contact",
+                        "url": "https://www.post.ch/fr/aide-et-contact"
+                    },
+                    {
+                        "isActive": true,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Centre clientèle",
+                        "url": "https://www.post.ch/fr/espace-clients"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": true,
+                        "target": null,
+                        "text": "Accueil",
+                        "url": "https://www.post.ch/fr/"
+                    }
+                ],
+                "navLang": [
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "de",
+                        "text": "De",
+                        "title": "Deutsch",
+                        "url": "https://places.post.ch/?lang=de&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": true,
+                        "lang": "fr",
+                        "text": "Fr",
+                        "title": "Français",
+                        "url": "https://places.post.ch/?lang=fr&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "it",
+                        "text": "It",
+                        "title": "Italiano",
+                        "url": "https://places.post.ch/?lang=it&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "en",
+                        "text": "En",
+                        "title": "English",
+                        "url": "https://places.post.ch/?lang=en&service=topos"
+                    }
+                ],
+                "translations": {
+                    "backButtonText": "Retour",
+                    "closeButtonText": "Fermer",
+                    "homeLinkTitle": "Accueil",
+                    "navLangAriaLabel": "Guidage vocal",
+                    "navMainAriaLabel": "Navigation principale",
+                    "navMetaAriaLabel": "Métanavigation",
+                    "searchAriaLabel": "Rechercher sur ce site web",
+                    "flyoutSearchBoxFloatingLabel": "Saisir un numéro d’envoi, terme de recherche",
+                    "searchPlaceholder": "Saisir un terme de recherche",
+                    "searchSubmit": "Lancer la recherche",
+                    "searchToggle": "Afficher la recherche",
+                    "searchToggleExpanded": "Masquer la recherche",
+                    "searchA11yLabelClosed": "Ouvrez recherche",
+                    "searchA11yLabelOpened": "Fermer recherche",
+                    "mobileNavToggleClose": "Fermer la navigation",
+                    "mobileNavToggleOpen": "Ouvrir la navigation",
+                    "nonResponsiveHeader": "Cette page n’est pas conçue pour les appareils mobiles.",
+                    "loginWidgetText": null
+                }
+            },
+            "breadcrumb": {
+                "a11yLabel": "Breadcrumb",
+                "asWebComponent": true,
+                "buttons": [
+                    {
+                        "svgIcon": {
+                            "name": "3033_question-mark",
+                            "classes": [],
+                            "additionalAttributes": [
+                                {
+                                    "name": "focusable",
+                                    "value": "false"
+                                }
+                            ]
+                        },
+                        "text": "Aide",
+                        "overlay": {
+                            "id": "help",
+                            "target": "https://www.post.ch/fr/espace-clients/services-en-ligne/standorte-und-oeffnungszeiten/info?modal=true",
+                            "closeText": "Fermer",
+                            "closeIcon": {
+                                "name": "2043_cross",
+                                "classes": [],
+                                "additionalAttributes": [
+                                    {
+                                        "name": "focusable",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            "classes": [
+                                "ppm-breadcrumb-overlay__body--light"
+                            ],
+                            "additionalAttributes": []
+                        },
+                        "classes": [
+                            "btn-outline-secondary"
+                        ],
+                        "additionalAttributes": []
+                    }
+                ],
+                "isCentered": false,
+                "items": [
+                    {
+                        "text": "Page d'accueil",
+                        "url": "https://www.post.ch/fr/"
+                    },
+                    {
+                        "text": "Centre clientèle",
+                        "url": "https://www.post.ch/fr/espace-clients"
+                    },
+                    {
+                        "text": "Sites et heures d'ouverture",
+                        "url": "https://places.post.ch/?lang=fr"
+                    }
+                ],
+                "linkLastBreadcrumbItem": false,
+                "svgIconArrowRightSmall": {
+                    "name": "2111_angle-small-right",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon",
+                        "ppm-breadcrumb-divider"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "svgIconHome": {
+                    "name": "2035_home",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "truncateButtonText": "Ouvrir",
+                "classes": [],
+                "additionalAttributes": []
+            },
+            "footer": {
+                "title": "Pied de page",
+                "asWebComponent": true,
+                "osLinks": {
+                    "serviceName": "Sites et heures d'ouverture",
+                    "links": []
+                },
+                "block": [
+                    {
+                        "columnType": "list",
+                        "title": "Accéder à",
+                        "links": [
+                            {
+                                "url": "https://www.postfinance.ch/fr",
+                                "target": "_blank",
+                                "text": "PostFinance",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postauto.ch/fr",
+                                "target": "_blank",
+                                "text": "CarPostal",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://immobilien.post.ch/fr/",
+                                "target": "_blank",
+                                "text": "Immobilier",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://postcompanycars.post.ch/fr",
+                                "target": "_blank",
+                                "text": "Post Company Cars",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "list",
+                        "title": "Davantage de Poste",
+                        "links": [
+                            {
+                                "url": "https://www.post.ch/fr/notre-profil/innovation",
+                                "target": "",
+                                "text": "Innovation",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/fr/notre-profil/responsabilite",
+                                "target": "",
+                                "text": "Responsabilité",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postshop.ch/shop/fr",
+                                "target": "_blank",
+                                "text": "Boutique",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/fr/notre-profil/medias",
+                                "target": "",
+                                "text": "Médias",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "contact",
+                        "title": "Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": null,
+                                "describe": "CHF 0.08/min. depuis le réseau fixe en Suisse",
+                                "hours": null,
+                                "links": null,
+                                "name": "phone",
+                                "number": "+41 848 888 888",
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "7h30–18h00",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Du lundi au vendredi",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "8h00–12h00",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Samedi",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "Partager l'écran",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Live Support",
+                                "title": null
+                            }
+                        ]
+                    },
+                    {
+                        "columnType": "address",
+                        "title": "Adresse du Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": "Poste CH Réseau SA<br/>Contact Center Poste<br/>Wankdorfallee 4<br/>3030 Berne",
+                                "describe": null,
+                                "hours": null,
+                                "links": null,
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": null,
+                                "links": [
+                                    {
+                                        "url": "https://www.facebook.com/swisspost",
+                                        "icon": "8004_facebook",
+                                        "name": "Suivez-nous sur Facebook",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.instagram.com/swisspost/",
+                                        "icon": "8007_instagram",
+                                        "name": "Suivez-nous sur Instagram",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.youtube.com/swisspost",
+                                        "icon": "8002_youtube",
+                                        "name": "Suivez-nous sur Youtube",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.snapchat.com/add/swisspostjobs",
+                                        "icon": "8017_snapchat",
+                                        "name": "Suivez-nous sur Snapchat",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://twitter.com/PostSchweiz",
+                                        "icon": "8000_twitter",
+                                        "name": "Suivez-nous sur Twitter",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.xing.com/companies/dieschweizerischepost",
+                                        "icon": "8001_xing",
+                                        "name": "Suivez-nous sur Xing",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.linkedin.com/company/swiss-post",
+                                        "icon": "8005_linkedin",
+                                        "name": "Suivez-nous sur LinkedIn",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.kununu.com/ch/die-schweizerische-post",
+                                        "icon": "8008_kununu",
+                                        "name": "Suivez-nous sur Kununu",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    }
+                                ],
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": "Suivez-nous"
+                            }
+                        ]
+                    }
+                ],
+                "entry": {
+                    "text": "© 2022 La Poste Suisse SA"
+                },
+                "links": [
+                    {
+                        "url": "https://www.post.ch/fr/pages/footer/accessibilite-a-la-poste",
+                        "target": "",
+                        "text": "Accessibilité",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/fr/pages/footer/conditions-generales-cg",
+                        "target": "",
+                        "text": "Conditions générales",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/fr/pages/footer/protection-des-donnees-et-informations-legales",
+                        "target": "",
+                        "text": "Protection des données et informations légales",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/fr/pages/footer/impressum",
+                        "target": "",
+                        "text": "Impressum",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                ],
+                "classes": [],
+                "additionalAttributes": []
+            }
+        },
+        "it": {
+            "header": {
+                "asWebComponent": true,
+                "isHeaderResponsive": true,
+                "isLoginWidgetHidden": true,
+                "showJobsLoginWidget": false,
+                "icons": {
+                    "backArrowIcon": {
+                        "name": "3024_arrow-left",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "closeIcon": {
+                        "name": "2043_cross",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "downArrowIcon": {
+                        "name": "2113_angle-small-down",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "menuIcon": {
+                        "name": "2070_burger-menu",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "rightArrowIcon": {
+                        "name": "3020_arrow-right",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "searchIcon": {
+                        "name": "2069_magnifying-glass",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "loginIcon": {
+                        "name": "2064_arrow-enter",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                },
+                "loginWidgetOptions": null,
+                "loginWidgetId": null,
+                "logo": {
+                    "logoLink": "https://www.post.ch/it/",
+                    "logoLinkTitle": "La Posta – Alla pagina iniziale",
+                    "logoSvg": "https://www.post.ch/-/media/portal-opp/global/logos/logo---die-post.svg?vs=2&sc_lang=it",
+                    "logoText": "Logo La Posta, alla pagina iniziale"
+                },
+                "mobileMenu": {
+                    "text": "Menù"
+                },
+                "search": {
+                    "isSearchHidden": false,
+                    "searchPageUrl": "https://www.post.ch/it/pages/suche",
+                    "redirectPattern": "^[A-Za-z0-9.]{11,23}$",
+                    "searchBoxSuggestionsThreshold": "0",
+                    "searchBoxSuggestionsAllNumber": "7",
+                    "searchBoxSuggestionsCoveoNumber": "5",
+                    "placesRedirectUrl": "https://places.post.ch/?lang=it&service=places&needid=110.1&preselecttext=",
+                    "packageTrackingRedirectUrl": "https://service.post.ch/ekp-web/external/view/{trackingNumber}?lang=it",
+                    "searchHubName": "900-701 suche",
+                    "searchPipelineName": "Post v2"
+                },
+                "onlineServiceId": "topos",
+                "navMain": [
+                    {
+                        "flyout": [],
+                        "id": "9bc0275b-8c91-4e89-8c0c-5e80bb8097b8",
+                        "text": "Centro clienti",
+                        "title": "Centro clienti",
+                        "url": "https://www.post.ch/it/centro-clienti/centro-clienti",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [],
+                        "id": "0eb467aa-ded4-4259-9178-b67f1f211819",
+                        "text": "Servizi online",
+                        "title": "Servizi online",
+                        "url": "https://www.post.ch/it/centro-clienti/servizi-online",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [
+                            {
+                                "linkList": [
+                                    {
+                                        "id": null,
+                                        "target": null,
+                                        "title": "Avvia il servizio online",
+                                        "url": "https://places.post.ch/?lang=it"
+                                    }
+                                ],
+                                "title": null
+                            }
+                        ],
+                        "id": "flyout_os",
+                        "text": "Ubicazioni e orari di apertura",
+                        "title": "Ubicazioni e orari di apertura",
+                        "url": null
+                    }
+                ],
+                "navMeta": [
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Lavoro",
+                        "url": "https://www.post.ch/it/lavoro"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Chi siamo",
+                        "url": "https://www.post.ch/it/chi-siamo"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Aiuto e contatto",
+                        "url": "https://www.post.ch/it/aiuto-e-contatto"
+                    },
+                    {
+                        "isActive": true,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Centro clienti",
+                        "url": "https://www.post.ch/it/centro-clienti"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": true,
+                        "target": null,
+                        "text": "Pagina iniziale",
+                        "url": "https://www.post.ch/it/"
+                    }
+                ],
+                "navLang": [
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "de",
+                        "text": "De",
+                        "title": "Deutsch",
+                        "url": "https://places.post.ch/?lang=de&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "fr",
+                        "text": "Fr",
+                        "title": "Français",
+                        "url": "https://places.post.ch/?lang=fr&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": true,
+                        "lang": "it",
+                        "text": "It",
+                        "title": "Italiano",
+                        "url": "https://places.post.ch/?lang=it&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "en",
+                        "text": "En",
+                        "title": "English",
+                        "url": "https://places.post.ch/?lang=en&service=topos"
+                    }
+                ],
+                "translations": {
+                    "backButtonText": "Indietro",
+                    "closeButtonText": "Chiudere",
+                    "homeLinkTitle": "Pagina iniziale",
+                    "navLangAriaLabel": "Menu lingue",
+                    "navMainAriaLabel": "Menu principale",
+                    "navMetaAriaLabel": "Metanavigazione",
+                    "searchAriaLabel": "Cercare in questa pagina",
+                    "flyoutSearchBoxFloatingLabel": "Inserire numero d’invio, criterio di ricerca",
+                    "searchPlaceholder": "Inserire criterio di ricerca",
+                    "searchSubmit": "Avvia la ricerca",
+                    "searchToggle": "Mostra la ricerca",
+                    "searchToggleExpanded": "Nascondi la ricerca",
+                    "searchA11yLabelClosed": "Aprire la ricerca",
+                    "searchA11yLabelOpened": "Chiudere la ricerca",
+                    "mobileNavToggleClose": "Chiudere la navigazione",
+                    "mobileNavToggleOpen": "Navigazione aperta",
+                    "nonResponsiveHeader": "Questa pagina non è concepita per dispositivi mobili.",
+                    "loginWidgetText": null
+                }
+            },
+            "breadcrumb": {
+                "a11yLabel": "Breadcrumb",
+                "asWebComponent": true,
+                "buttons": [
+                    {
+                        "svgIcon": {
+                            "name": "3033_question-mark",
+                            "classes": [],
+                            "additionalAttributes": [
+                                {
+                                    "name": "focusable",
+                                    "value": "false"
+                                }
+                            ]
+                        },
+                        "text": "Aiuto",
+                        "overlay": {
+                            "id": "help",
+                            "target": "https://www.post.ch/it/centro-clienti/servizi-online/standorte-und-oeffnungszeiten/info?modal=true",
+                            "closeText": "Chiudere",
+                            "closeIcon": {
+                                "name": "2043_cross",
+                                "classes": [],
+                                "additionalAttributes": [
+                                    {
+                                        "name": "focusable",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            "classes": [
+                                "ppm-breadcrumb-overlay__body--light"
+                            ],
+                            "additionalAttributes": []
+                        },
+                        "classes": [
+                            "btn-outline-secondary"
+                        ],
+                        "additionalAttributes": []
+                    }
+                ],
+                "isCentered": false,
+                "items": [
+                    {
+                        "text": "Pagina iniziale",
+                        "url": "https://www.post.ch/it/"
+                    },
+                    {
+                        "text": "Centro clienti",
+                        "url": "https://www.post.ch/it/centro-clienti"
+                    },
+                    {
+                        "text": "Ubicazioni e orari di apertura",
+                        "url": "https://places.post.ch/?lang=it"
+                    }
+                ],
+                "linkLastBreadcrumbItem": false,
+                "svgIconArrowRightSmall": {
+                    "name": "2111_angle-small-right",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon",
+                        "ppm-breadcrumb-divider"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "svgIconHome": {
+                    "name": "2035_home",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "truncateButtonText": "Aprire",
+                "classes": [],
+                "additionalAttributes": []
+            },
+            "footer": {
+                "title": "Piè di pagina",
+                "asWebComponent": true,
+                "osLinks": {
+                    "serviceName": "Ubicazioni e orari di apertura",
+                    "links": []
+                },
+                "block": [
+                    {
+                        "columnType": "list",
+                        "title": "Vai direttamente a",
+                        "links": [
+                            {
+                                "url": "https://www.postfinance.ch/it",
+                                "target": "_blank",
+                                "text": "PostFinance",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postauto.ch/it",
+                                "target": "_blank",
+                                "text": "AutoPostale",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://immobilien.post.ch/it/",
+                                "target": "_blank",
+                                "text": "Immobili",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://postcompanycars.post.ch/it",
+                                "target": "_blank",
+                                "text": "Post Company Cars",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "list",
+                        "title": "Più Posta",
+                        "links": [
+                            {
+                                "url": "https://www.post.ch/it/chi-siamo/innovazione",
+                                "target": "",
+                                "text": "Innovazione",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/it/chi-siamo/responsabilita",
+                                "target": "",
+                                "text": "Responsabilità",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postshop.ch/shop/it",
+                                "target": "_blank",
+                                "text": "Shop",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/it/chi-siamo/media",
+                                "target": "",
+                                "text": "Media",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "contact",
+                        "title": "Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": null,
+                                "describe": "CHF 0.08/min da rete fissa svizzera",
+                                "hours": null,
+                                "links": null,
+                                "name": "phone",
+                                "number": "+41 848 888 888",
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "7.30-18.00",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Dal lunedì al venerdì",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "8.00-12.00",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Sabato",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "Condividere lo schermo",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Live Support",
+                                "title": null
+                            }
+                        ]
+                    },
+                    {
+                        "columnType": "address",
+                        "title": "Indirizzo Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": "Posta CH Rete SA<br/>Contact Center Posta<br/>Wankdorfallee 4<br/>3030 Berna",
+                                "describe": null,
+                                "hours": null,
+                                "links": null,
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": null,
+                                "links": [
+                                    {
+                                        "url": "https://www.facebook.com/swisspost",
+                                        "icon": "8004_facebook",
+                                        "name": "Seguici su Facebook",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.instagram.com/swisspost/",
+                                        "icon": "8007_instagram",
+                                        "name": "Seguici su Instagram",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.youtube.com/swisspost",
+                                        "icon": "8002_youtube",
+                                        "name": "Seguici su Youtube",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.snapchat.com/add/swisspostjobs",
+                                        "icon": "8017_snapchat",
+                                        "name": "Seguici su Snapchat",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://twitter.com/PostSchweiz",
+                                        "icon": "8000_twitter",
+                                        "name": "Seguici su Twitter",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.xing.com/companies/dieschweizerischepost",
+                                        "icon": "8001_xing",
+                                        "name": "Seguici su Xing",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.linkedin.com/company/swiss-post",
+                                        "icon": "8005_linkedin",
+                                        "name": "Seguici su LinkedIn",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.kununu.com/ch/die-schweizerische-post",
+                                        "icon": "8008_kununu",
+                                        "name": "Seguici su Kununu",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    }
+                                ],
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": "Seguici"
+                            }
+                        ]
+                    }
+                ],
+                "entry": {
+                    "text": "© 2022 La Posta Svizzera SA"
+                },
+                "links": [
+                    {
+                        "url": "https://www.post.ch/it/pages/footer/accessibilita-alla-posta",
+                        "target": "",
+                        "text": "Accessibilità",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/it/pages/footer/condizioni-generali-cg",
+                        "target": "",
+                        "text": "Condizioni generali",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/it/pages/footer/protezione-dei-dati-e-avvertenze-legali",
+                        "target": "",
+                        "text": "Protezione dei dati e avvertenze legali",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/it/pages/footer/colophon",
+                        "target": "",
+                        "text": "Colophon",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                ],
+                "classes": [],
+                "additionalAttributes": []
+            }
+        },
+        "en": {
+            "header": {
+                "asWebComponent": true,
+                "isHeaderResponsive": true,
+                "isLoginWidgetHidden": true,
+                "showJobsLoginWidget": false,
+                "icons": {
+                    "backArrowIcon": {
+                        "name": "3024_arrow-left",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "closeIcon": {
+                        "name": "2043_cross",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "downArrowIcon": {
+                        "name": "2113_angle-small-down",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "menuIcon": {
+                        "name": "2070_burger-menu",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "rightArrowIcon": {
+                        "name": "3020_arrow-right",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "searchIcon": {
+                        "name": "2069_magnifying-glass",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    "loginIcon": {
+                        "name": "2064_arrow-enter",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                },
+                "loginWidgetOptions": null,
+                "loginWidgetId": null,
+                "logo": {
+                    "logoLink": "https://www.post.ch/en/",
+                    "logoLinkTitle": "Logo of the Post, To the homepage",
+                    "logoSvg": "https://www.post.ch/-/media/portal-opp/global/logos/logo---die-post.svg?vs=2&sc_lang=en",
+                    "logoText": "Logo Die Post, To the homepage"
+                },
+                "mobileMenu": {
+                    "text": "Menu"
+                },
+                "search": {
+                    "isSearchHidden": false,
+                    "searchPageUrl": "https://www.post.ch/en/pages/suche",
+                    "redirectPattern": "^[A-Za-z0-9.]{11,23}$",
+                    "searchBoxSuggestionsThreshold": "0",
+                    "searchBoxSuggestionsAllNumber": "7",
+                    "searchBoxSuggestionsCoveoNumber": "5",
+                    "placesRedirectUrl": "https://places.post.ch/?lang=en&service=places&needid=110.1&preselecttext=",
+                    "packageTrackingRedirectUrl": "https://service.post.ch/ekp-web/external/view/{trackingNumber}?lang=en",
+                    "searchHubName": "900-701 suche",
+                    "searchPipelineName": "Post v2"
+                },
+                "onlineServiceId": "topos",
+                "navMain": [
+                    {
+                        "flyout": [],
+                        "id": "9bc0275b-8c91-4e89-8c0c-5e80bb8097b8",
+                        "text": "Customer center",
+                        "title": "Customer center",
+                        "url": "https://www.post.ch/en/customer-center/customer-center",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [],
+                        "id": "0eb467aa-ded4-4259-9178-b67f1f211819",
+                        "text": "Online services",
+                        "title": "Online services",
+                        "url": "https://www.post.ch/en/customer-center/online-services",
+                        "noFlyout": true
+                    },
+                    {
+                        "flyout": [
+                            {
+                                "linkList": [
+                                    {
+                                        "id": null,
+                                        "target": null,
+                                        "title": "Start online service",
+                                        "url": "https://places.post.ch/?lang=en"
+                                    }
+                                ],
+                                "title": null
+                            }
+                        ],
+                        "id": "flyout_os",
+                        "text": "Locations and opening hours",
+                        "title": "Locations and opening hours",
+                        "url": null
+                    }
+                ],
+                "navMeta": [
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Jobs",
+                        "url": "https://www.post.ch/en/jobs"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "About us",
+                        "url": "https://www.post.ch/en/about-us"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Help and contact",
+                        "url": "https://www.post.ch/en/help-and-contact"
+                    },
+                    {
+                        "isActive": true,
+                        "isHomeLink": false,
+                        "target": null,
+                        "text": "Customer Center",
+                        "url": "https://www.post.ch/en/customer-center"
+                    },
+                    {
+                        "isActive": false,
+                        "isHomeLink": true,
+                        "target": null,
+                        "text": "Home",
+                        "url": "https://www.post.ch/en/"
+                    }
+                ],
+                "navLang": [
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "de",
+                        "text": "De",
+                        "title": "Deutsch",
+                        "url": "https://places.post.ch/?lang=de&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "fr",
+                        "text": "Fr",
+                        "title": "Français",
+                        "url": "https://places.post.ch/?lang=fr&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": false,
+                        "lang": "it",
+                        "text": "It",
+                        "title": "Italiano",
+                        "url": "https://places.post.ch/?lang=it&service=topos"
+                    },
+                    {
+                        "a11yLabel": null,
+                        "isCurrent": true,
+                        "lang": "en",
+                        "text": "En",
+                        "title": "English",
+                        "url": "https://places.post.ch/?lang=en&service=topos"
+                    }
+                ],
+                "translations": {
+                    "backButtonText": "Back",
+                    "closeButtonText": "Close",
+                    "homeLinkTitle": "Home",
+                    "navLangAriaLabel": "Language navigation",
+                    "navMainAriaLabel": "Main navigation",
+                    "navMetaAriaLabel": "Meta navigation",
+                    "searchAriaLabel": "Search this website",
+                    "flyoutSearchBoxFloatingLabel": "Enter consignment number, search term",
+                    "searchPlaceholder": "Enter search phrase",
+                    "searchSubmit": "Search",
+                    "searchToggle": "Show search",
+                    "searchToggleExpanded": "Hide search",
+                    "searchA11yLabelClosed": "Open search",
+                    "searchA11yLabelOpened": "Close search ",
+                    "mobileNavToggleClose": "Navigation close",
+                    "mobileNavToggleOpen": "Navigation open",
+                    "nonResponsiveHeader": "This page is not designed for mobile devices.",
+                    "loginWidgetText": null
+                }
+            },
+            "breadcrumb": {
+                "a11yLabel": "Breadcrumb",
+                "asWebComponent": true,
+                "buttons": [
+                    {
+                        "svgIcon": {
+                            "name": "3033_question-mark",
+                            "classes": [],
+                            "additionalAttributes": [
+                                {
+                                    "name": "focusable",
+                                    "value": "false"
+                                }
+                            ]
+                        },
+                        "text": "Help",
+                        "overlay": {
+                            "id": "help",
+                            "target": "https://www.post.ch/en/customer-center/online-services/standorte-und-oeffnungszeiten/info?modal=true",
+                            "closeText": "Close",
+                            "closeIcon": {
+                                "name": "2043_cross",
+                                "classes": [],
+                                "additionalAttributes": [
+                                    {
+                                        "name": "focusable",
+                                        "value": "false"
+                                    }
+                                ]
+                            },
+                            "classes": [
+                                "ppm-breadcrumb-overlay__body--light"
+                            ],
+                            "additionalAttributes": []
+                        },
+                        "classes": [
+                            "btn-outline-secondary"
+                        ],
+                        "additionalAttributes": []
+                    }
+                ],
+                "isCentered": false,
+                "items": [
+                    {
+                        "text": "Home page",
+                        "url": "https://www.post.ch/en/"
+                    },
+                    {
+                        "text": "Customer Center",
+                        "url": "https://www.post.ch/en/customer-center"
+                    },
+                    {
+                        "text": "Locations and opening hours",
+                        "url": "https://places.post.ch/?lang=en"
+                    }
+                ],
+                "linkLastBreadcrumbItem": false,
+                "svgIconArrowRightSmall": {
+                    "name": "2111_angle-small-right",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon",
+                        "ppm-breadcrumb-divider"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "svgIconHome": {
+                    "name": "2035_home",
+                    "classes": [
+                        "ppm-breadcrumb__svg-icon"
+                    ],
+                    "additionalAttributes": [
+                        {
+                            "name": "focusable",
+                            "value": "false"
+                        }
+                    ]
+                },
+                "truncateButtonText": "Open",
+                "classes": [],
+                "additionalAttributes": []
+            },
+            "footer": {
+                "title": "Footer",
+                "asWebComponent": true,
+                "osLinks": {
+                    "serviceName": "Locations and opening hours",
+                    "links": []
+                },
+                "block": [
+                    {
+                        "columnType": "list",
+                        "title": "Go directly to",
+                        "links": [
+                            {
+                                "url": "https://www.postfinance.ch/en",
+                                "target": "_blank",
+                                "text": "PostFinance",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postauto.ch/en",
+                                "target": "_blank",
+                                "text": "PostBus",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://immobilien.post.ch/en/",
+                                "target": "_blank",
+                                "text": "Real Estate",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://postcompanycars.post.ch/en",
+                                "target": "_blank",
+                                "text": "Post Company Cars",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "list",
+                        "title": "More from Swiss Post",
+                        "links": [
+                            {
+                                "url": "https://www.post.ch/en/about-us/innovation",
+                                "target": "",
+                                "text": "Innovation",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/en/about-us/responsibility",
+                                "target": "",
+                                "text": "Responsibility",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.postshop.ch/shop/en",
+                                "target": "_blank",
+                                "text": "Shop",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            },
+                            {
+                                "url": "https://www.post.ch/en/about-us/media",
+                                "target": "",
+                                "text": "Media",
+                                "title": "",
+                                "classes": [],
+                                "additionalAttributes": []
+                            }
+                        ],
+                        "content": null
+                    },
+                    {
+                        "columnType": "contact",
+                        "title": "Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": null,
+                                "describe": "CHF 0.08/min. from landline phones within Switzerland",
+                                "hours": null,
+                                "links": null,
+                                "name": "phone",
+                                "number": "+41 848 888 888",
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "7.30 a.m.–6 p.m.",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Monday to Friday",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "8 a.m.–12 noon",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Saturday",
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": "Share screen",
+                                "links": null,
+                                "name": "days",
+                                "number": null,
+                                "text": "Live Support",
+                                "title": null
+                            }
+                        ]
+                    },
+                    {
+                        "columnType": "address",
+                        "title": "Address Contact Center",
+                        "links": null,
+                        "content": [
+                            {
+                                "address": "Post CH Network Ltd<br/>Swiss Post Contact Center<br/>Wankdorfallee 4<br/>3030 Bern",
+                                "describe": null,
+                                "hours": null,
+                                "links": null,
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": null
+                            },
+                            {
+                                "address": null,
+                                "describe": null,
+                                "hours": null,
+                                "links": [
+                                    {
+                                        "url": "https://www.facebook.com/swisspost",
+                                        "icon": "8004_facebook",
+                                        "name": "Follow us on Facebook",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.instagram.com/swisspost/",
+                                        "icon": "8007_instagram",
+                                        "name": "Follow us on Instagram",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.youtube.com/swisspost",
+                                        "icon": "8002_youtube",
+                                        "name": "Follow us on Youtube",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.snapchat.com/add/swisspostjobs",
+                                        "icon": "8017_snapchat",
+                                        "name": "Follow us on Snapchat",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://twitter.com/PostSchweiz",
+                                        "icon": "8000_twitter",
+                                        "name": "Follow us on Twitter",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.xing.com/companies/dieschweizerischepost",
+                                        "icon": "8001_xing",
+                                        "name": "Follow us on Xing",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "http://www.linkedin.com/company/swiss-post",
+                                        "icon": "8005_linkedin",
+                                        "name": "Follow us on LinkedIn",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    },
+                                    {
+                                        "url": "https://www.kununu.com/ch/die-schweizerische-post",
+                                        "icon": "8008_kununu",
+                                        "name": "Follow us on Kununu",
+                                        "target": "_blank",
+                                        "classes": [],
+                                        "additionalAttributes": []
+                                    }
+                                ],
+                                "name": null,
+                                "number": null,
+                                "text": null,
+                                "title": "Follow us"
+                            }
+                        ]
+                    }
+                ],
+                "entry": {
+                    "text": "© 2022 Swiss Post Ltd"
+                },
+                "links": [
+                    {
+                        "url": "https://www.post.ch/en/pages/footer/accessibility-at-swiss-post",
+                        "target": "",
+                        "text": "Accessibility",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/en/pages/footer/general-terms-and-conditions-gtc",
+                        "target": "",
+                        "text": "General Terms and Conditions",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/en/pages/footer/data-protection-and-disclaimer",
+                        "target": "",
+                        "text": "Data protection and disclaimer",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    },
+                    {
+                        "url": "https://www.post.ch/en/pages/footer/publication-details",
+                        "target": "",
+                        "text": "Publication details",
+                        "title": "",
+                        "classes": [],
+                        "additionalAttributes": []
+                    }
+                ],
+                "classes": [],
+                "additionalAttributes": []
+            }
+        }
+    }
+}
