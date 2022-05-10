@@ -1,6 +1,4 @@
-{
-    "data": {
-        "stores": [
+[
             {
                 "localized_slugs": {
                     "de": "aachtal",
@@ -44500,8 +44498,4 @@
                 "slug": "migrolino-zuerich-niederdorf",
                 "cooperative": null
             }
-        ],
-        "total_hits": 1165,
-        "aggregations": {}
-    }
-}
+        ]

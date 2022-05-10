@@ -1,5 +1,4 @@
-{
-    "hydra:member": [
+[
         {
             "singleUrl": "https://www.spar.ch/standorte/detail/spar-supermarkt-disentis-muster",
             "name": "SPAR Supermarkt Disentis/Mustér",
@@ -18222,31 +18221,4 @@
             "coordinatey": 9.037984,
             "uid": 116
         }
-    ],
-    "hydra:totalItems": 256,
-    "hydra:view": {
-        "hydra:first": "/_api/markets?itemsPerPage=9999&page=1&markettype_uid%5B0%5D=1&markettype_uid%5B1%5D=2&markettype_uid%5B2%5D=8&markettype_uid%5B3%5D=9",
-        "hydra:last": "/_api/markets?itemsPerPage=9999&page=1&markettype_uid%5B0%5D=1&markettype_uid%5B1%5D=2&markettype_uid%5B2%5D=8&markettype_uid%5B3%5D=9",
-        "hydra:pages": [
-            "/_api/markets?itemsPerPage=9999&page=1&markettype_uid%5B0%5D=1&markettype_uid%5B1%5D=2&markettype_uid%5B2%5D=8&markettype_uid%5B3%5D=9"
-        ],
-        "hydra:page": 1
-    },
-    "hydra:search": {
-        "hydra:template": "/_api/markets{?uid,company_uid,markettype_uid}",
-        "hydra:mapping": [
-            {
-                "variable": "uid",
-                "property": "uid"
-            },
-            {
-                "variable": "company_uid",
-                "property": "company.uid"
-            },
-            {
-                "variable": "markettype_uid",
-                "property": "markettype.uid"
-            }
-        ]
-    }
-}
+    ]
