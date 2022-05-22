@@ -14,9 +14,9 @@ def load_predictions():
   data = pd.read_csv("./app/predictions.csv")
   return data
 
-st.sidebar.write("Welcome to Sogrim")
+st.sidebar.Title("Sogrim")
 nav = st.sidebar.radio("Navigation", ("Data Exploration", "Model Performance", "Location Optimizer"))
-st.sidebar.write("About")
+st.sidebar.Header("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.""")
 
 if nav == "Data Exploration":
