@@ -19,13 +19,13 @@ def load_predictions():
 
 def get_data_unit(feature):
   data_unit={
-    "BEVDICHTE_SQKM_2019":"p/sqkm",
+    "BEVDICHTE_SQKM_ 2019":"p/sqkm",
     "AUSLAENDER_ANTEIL_2019":"%",
     "ALTERSVERTEILUNG_ANTEIL_0_19_2019":"p.",
     "ALTERSVERTEILUNG_ANTEIL_20_64_2019":"p.",
-    "ALTERSVERTEILUNG_ANTEIL_65PLUS_2019":"p.",
-    "PRIVATHAUSHALTE_2019":"Haushalte",
-    "GESAMTFLAECHE_SQKM_2019":"sqkm",
+    "ALTERSVERTEILUNG_ANTEIL_65PLUS_ 2019":"p.",
+    "PRIVATHAUSHALTE_2019":"Hshlt.",
+    "GESAMTFLAECHE_ SQKM_2016":"sqkm",
     "LANDWIRTSCHAFTSFLAECHE_Anteil_2004/09":"%",
     "WLAD_GEHOELZE_Anteil_2004/09":"%",
     "UNPRODUKTIVE_FLAECHE_Anteil_2004/09":"%",
@@ -61,6 +61,7 @@ if nav == "Data Exploration":
   col3.metric("Average", str(all_data[choice_data_exp].mean().round(2))+" "+get_data_unit(choice_data_exp))
   col4.metric("q3", str(all_data[choice_data_exp].quantile(q=0.75).round(2))+" "+get_data_unit(choice_data_exp))
   col5.metric("Max", str(all_data[choice_data_exp].max().round(2))+" "+get_data_unit(choice_data_exp))
+  st.bar_chart(all_data[choice_data_exp])
   st.dataframe(all_data)
 elif nav == "Model Performance":
   st.write("This is Model Performance")
