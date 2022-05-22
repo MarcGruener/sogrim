@@ -1,9 +1,12 @@
 import streamlit as st
 import pandas as pd
 
-st.title("""
-         Welcome to SOGRIM <3
-         """)
+st.set_page_config(
+  page_title="Sogrim",
+  page_icon="🇨🇭",
+  layout="wide",
+  initial_sidebar_state="expanded"
+)
 
 def load_all_data():
   data = pd.read_csv("./app/data.csv")
@@ -14,12 +17,6 @@ def load_predictions():
   data = pd.read_csv("./app/predictions.csv")
   return data
 
-st.set_page_config(
-  page_title="Sogrim",
-  page_icon="🇨🇭",
-  layout="wide",
-  initial_sidebar_state="expanded"
-)
 
 st.sidebar.title("Sogrim")
 nav = st.sidebar.radio("Navigation", ("Data Exploration", "Model Performance", "Location Optimizer"))
