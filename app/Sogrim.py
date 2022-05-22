@@ -66,7 +66,7 @@ if nav == "Data Exploration":
   col4.metric("q3", str(all_data[choice_data_exp].quantile(q=0.75).round(2))+" "+get_data_unit(choice_data_exp))
   col5.metric("Max", str(all_data[choice_data_exp].max().round(2))+" "+get_data_unit(choice_data_exp))
 
-  fig = px.histogram(all_data[choice_data_exp], nbins=sqrt(len(all_data[choice_data_exp])))
+  fig = px.histogram(all_data[choice_data_exp], nbins=sqrt(len(all_data[choice_data_exp])).round(0))
   st.plotly_chart(fig, use_container_width=True)
 
   st.dataframe(all_data)
