@@ -16,7 +16,7 @@ def load_predictions():
   return data
 
 st.set_page_config(
-  title="Sogrim",
+  page_title="Sogrim",
   page_icon="🇨🇭",
   layout="wide",
   initial_sidebar_state="expanded"
