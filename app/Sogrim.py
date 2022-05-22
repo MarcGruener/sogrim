@@ -20,8 +20,7 @@ st.sidebar.radtio("Navigation", ("Data Exploration", "Model Performance", "Licat
 st.sidebar.write("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.""")
 
-
 all_data = load_all_data()
 
-st.dataframe(data)
-st.map(data)
+st.dataframe(all_data)
+st.map(all_data)
