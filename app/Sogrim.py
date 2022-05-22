@@ -1,5 +1,7 @@
+from calendar import c
 import streamlit as st
 import pandas as pd
+import plotly.express as px
 
 st.set_page_config(
   page_title="Sogrim",
@@ -61,7 +63,10 @@ if nav == "Data Exploration":
   col3.metric("Average", str(all_data[choice_data_exp].mean().round(2))+" "+get_data_unit(choice_data_exp))
   col4.metric("q3", str(all_data[choice_data_exp].quantile(q=0.75).round(2))+" "+get_data_unit(choice_data_exp))
   col5.metric("Max", str(all_data[choice_data_exp].max().round(2))+" "+get_data_unit(choice_data_exp))
-  st.bar_chart(all_data[choice_data_exp])
+
+  fig = px.histogram(all_data[choice_data_exp])
+  st.plotly_chart(fig, use_container_width=True)
+
   st.dataframe(all_data)
 elif nav == "Model Performance":
   st.write("This is Model Performance")
