@@ -32,13 +32,13 @@ def get_data_unit(feature):
     "BESCHÄFTIGTE_ERSTERSEKTOR_2018":"p.",
     "BESCHÄFTIGTE_ZWEITERRSEKTOR_2018":"p.",
     "BESCHÄFTIGTE_DRITTERSEKTOR_2018":"p.",
-    "NEUWOHNUNGEN_PRO_1000_2018":"Wohnungen/1,000p",
+    "NEUWOHNUNGEN_PRO_1000_2018":"Wo./1,000p",
     "SOZIALHILFEQUOTE_2019":"%",
     "WAEHLERANTEIL_SP_2019":"%",
     "WAEHLERANTEIL_SVP_2019":"%",
     "AVG_INCOME_PRO_STEUERPFPERSON":"Chf/p.",
-    "ANZAHL_FAHRZEUGE":"Fahrzeuge",
-    "ANZAHL_HALTESTELLEN_OV":"Haltestellen",
+    "ANZAHL_FAHRZEUGE":"Fhrz.",
+    "ANZAHL_HALTESTELLEN_OV":"Hltst.",
     "Anzahl Filialen Migros":"Filialen"
   }
   return data_unit[feature]
@@ -57,10 +57,10 @@ if nav == "Data Exploration":
   st.write(choice_data_exp)
   col1, col2, col3, col4, col5 = st.columns(5)
   col1.metric("Min", str(all_data[choice_data_exp].min().round(2))+" "+get_data_unit(choice_data_exp))
-  col2.metric("q1", all_data[choice_data_exp].quantile(q=0.25).round(2)+" "+get_data_unit(choice_data_exp))
-  col3.metric("Average", all_data[choice_data_exp].mean().round(2)+" "+get_data_unit(choice_data_exp))
-  col4.metric("q3", all_data[choice_data_exp].quantile(q=0.75).round(2)+" "+get_data_unit(choice_data_exp))
-  col5.metric("Max", all_data[choice_data_exp].max().round(2)+" "+get_data_unit(choice_data_exp))
+  col2.metric("q1", str(all_data[choice_data_exp].quantile(q=0.25).round(2))+" "+get_data_unit(choice_data_exp))
+  col3.metric("Average", str(all_data[choice_data_exp].mean().round(2))+" "+get_data_unit(choice_data_exp))
+  col4.metric("q3", str(all_data[choice_data_exp].quantile(q=0.75).round(2))+" "+get_data_unit(choice_data_exp))
+  col5.metric("Max", str(all_data[choice_data_exp].max().round(2))+" "+get_data_unit(choice_data_exp))
   st.dataframe(all_data)
 elif nav == "Model Performance":
   st.write("This is Model Performance")
