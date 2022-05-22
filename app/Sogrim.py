@@ -42,7 +42,7 @@ def get_data_unit(feature):
     "AVG_INCOME_PRO_STEUERPFPERSON":"Chf/p.",
     "ANZAHL_FAHRZEUGE":"Fhrz.",
     "ANZAHL_HALTESTELLEN_OV":"Hltst.",
-    "Anzahl Filialen Migros":"Filialen"
+    "Anzahl Filialen Migros":"Fil."
   }
   return data_unit[feature]
 
