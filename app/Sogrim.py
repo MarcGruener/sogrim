@@ -1,4 +1,3 @@
-from turtle import title
 import streamlit as st
 import pandas as pd
 
@@ -17,6 +16,7 @@ def load_predictions():
 
 st.set_page_config(
   page_title="Sogrim",
+  page_icon="🇨🇭",
   layout="wide",
   initial_sidebar_state="expanded"
 )
