@@ -1,3 +1,4 @@
+from turtle import title
 import streamlit as st
 import pandas as pd
 
@@ -13,6 +14,13 @@ def load_all_data():
 def load_predictions():
   data = pd.read_csv("./app/predictions.csv")
   return data
+
+st.set_page_config(
+  title="Sogrim",
+  page_icon="🇨🇭",
+  layout="wide",
+  initial_sidebar_state="expanded"
+)
 
 st.sidebar.title("Sogrim")
 nav = st.sidebar.radio("Navigation", ("Data Exploration", "Model Performance", "Location Optimizer"))
