@@ -5,12 +5,23 @@ st.title("""
          Welcome to SOGRIM <3
          """)
 
-def load_data():
-  data = pd.read_excel("./models/aggregated.xlsx", "Main")
+def load_all_data():
+  data = pd.read_csv("/data.csv")
   data.rename(columns={"LAT_CNTR":"lat", "LONG_CNTR":"lon"}, inplace=True)
   return data
-  
-data = load_data()
+
+def load_predictions():
+  data = pd.read_csv("/predictions.csv")
+  return data
+
+st.sidebar.write("Welcome to Sogrim")
+st.sidebar.write("Navigation")
+st.sidebar.radtio("Navigation", ("Data Exploration", "Model Performance", "Lication Optimizer"))
+st.sidebar.write("About")
+st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.""")
+
+
+all_data = load_all_data()
 
 st.dataframe(data)
 st.map(data)
