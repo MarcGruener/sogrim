@@ -56,7 +56,7 @@ if nav == "Data Exploration":
   choice_data_exp = st.selectbox("Select a Feature", list(all_data.columns))
   st.write(choice_data_exp)
   col1, col2, col3, col4, col5 = st.columns(5)
-  col1.metric("Min", all_data[choice_data_exp].min().round(2)+" "+get_data_unit(choice_data_exp))
+  col1.metric("Min", str(all_data[choice_data_exp].min().round(2))+" "+get_data_unit(choice_data_exp))
   col2.metric("q1", all_data[choice_data_exp].quantile(q=0.25).round(2)+" "+get_data_unit(choice_data_exp))
   col3.metric("Average", all_data[choice_data_exp].mean().round(2)+" "+get_data_unit(choice_data_exp))
   col4.metric("q3", all_data[choice_data_exp].quantile(q=0.75).round(2)+" "+get_data_unit(choice_data_exp))
