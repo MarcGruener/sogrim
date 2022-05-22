@@ -25,6 +25,12 @@ if nav == "Data Exploration":
   all_data = load_all_data()
   choice_data_exp = st.selectbox("Select a Feature", list(all_data.columns))
   st.write(choice_data_exp)
+  st.metric("Min", all.data[choice_data_exp].min())
+  st.metric("q1", all.data[choice_data_exp].quantile(q=0.25,axis=1))
+  st.metric("Average", all.data[choice_data_exp].mean(axis=1))
+  st.metric("q3", all.data[choice_data_exp].quantile(q=0.75,axis=1))
+  st.metric("Max", all.data[choice_data_exp].max())
+  st.dataframe(all_data)
 elif nav == "Model Performance":
   st.write("This is Model Performance")
 elif nav == "Location Optimizer":
