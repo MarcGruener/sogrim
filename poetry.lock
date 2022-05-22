@@ -289,6 +289,14 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "plotly"
+version = "5.8"
+description = "Graphing"
+category = "main"
+optional = false
+python-versions = ">=5.8"
+
+[[package]]
 name = "importlib-metadata"
 version = "4.11.3"
 description = "Read metadata from Python packages"
