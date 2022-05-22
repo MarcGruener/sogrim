@@ -16,7 +16,7 @@ def load_predictions():
 
 st.sidebar.write("Welcome to Sogrim")
 st.sidebar.write("Navigation")
-st.sidebar.radtio("Navigation", ("Data Exploration", "Model Performance", "Lication Optimizer"))
+st.sidebar.radio("Navigation", ("Data Exploration", "Model Performance", "Lication Optimizer"))
 st.sidebar.write("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.""")
 
