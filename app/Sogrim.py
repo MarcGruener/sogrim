@@ -1,6 +1,7 @@
 from calendar import c
 import streamlit as st
 import pandas as pd
+import plotly.figure_factory as ff
 import plotly.express as px
 
 st.set_page_config(
@@ -21,18 +22,18 @@ def load_predictions():
 
 def get_data_unit(feature):
   data_unit={
-    "BEVDICHTE_SQKM_ 2019":"p/sqkm",
+    "BEVDICHTE_SQKM_2019":"p/sqkm",
     "AUSLAENDER_ANTEIL_2019":"%",
     "ALTERSVERTEILUNG_ANTEIL_0_19_2019":"p.",
     "ALTERSVERTEILUNG_ANTEIL_20_64_2019":"p.",
-    "ALTERSVERTEILUNG_ANTEIL_65PLUS_ 2019":"p.",
+    "ALTERSVERTEILUNG_ANTEIL_65PLUS_2019":"p.",
     "PRIVATHAUSHALTE_2019":"Hshlt.",
     "GESAMTFLAECHE_ SQKM_2016":"sqkm",
     "LANDWIRTSCHAFTSFLAECHE_Anteil_2004/09":"%",
     "WLAD_GEHOELZE_Anteil_2004/09":"%",
     "UNPRODUKTIVE_FLAECHE_Anteil_2004/09":"%",
     "BESCHÄFTIGTE_ERSTERSEKTOR_2018":"p.",
-    "BESCHÄFTIGTE_ZWEITERRSEKTOR_2018":"p.",
+    "BESCHÄFTIGTE_ZWEITERSEKTOR_2018":"p.",
     "BESCHÄFTIGTE_DRITTERSEKTOR_2018":"p.",
     "NEUWOHNUNGEN_PRO_1000_2018":"Wo./1,000p",
     "SOZIALHILFEQUOTE_2019":"%",
