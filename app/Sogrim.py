@@ -22,6 +22,9 @@ For this purpose, we leverage a wide range of data points from various pubic dat
 
 if nav == "Data Exploration":
   st.write("This is Data Exploration")
+  all_data = load_all_data()
+  choice_data_exp = st.selectbox("Select a Feature", list(all_data.columns))
+  st.write(choice_data_exp)
 elif nav == "Model Performance":
   st.write("This is Model Performance")
 elif nav == "Location Optimizer":
