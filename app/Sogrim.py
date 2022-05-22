@@ -6,21 +6,22 @@ st.title("""
          """)
 
 def load_all_data():
-  data = pd.read_csv("/data.csv")
+  data = pd.read_csv("./app/data.csv")
   data.rename(columns={"LAT_CNTR":"lat", "LONG_CNTR":"lon"}, inplace=True)
   return data
 
 def load_predictions():
-  data = pd.read_csv("/predictions.csv")
+  data = pd.read_csv("./app/predictions.csv")
   return data
 
 st.sidebar.write("Welcome to Sogrim")
-st.sidebar.write("Navigation")
-st.sidebar.radio("Navigation", ("Data Exploration", "Model Performance", "Lication Optimizer"))
+nav = st.sidebar.radio("Navigation", ("Data Exploration", "Model Performance", "Location Optimizer"))
 st.sidebar.write("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.""")
 
-all_data = load_all_data()
-
-st.dataframe(all_data)
-st.map(all_data)
+if nav == "Data Exploration":
+  st.write("This is Data Exploration")
+elif nav == "Model Performance":
+  st.write("This is Model Performance")
+elif nav == "Location Optimizer":
+  st.write("This is Location Optimizier")
