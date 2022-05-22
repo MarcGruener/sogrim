@@ -27,7 +27,7 @@ if nav == "Data Exploration":
   st.write(choice_data_exp)
   st.metric("Min", all_data[choice_data_exp].min())
   st.metric("q1", all_data[choice_data_exp].quantile(q=0.25))
-  st.metric("Average", all_data[choice_data_exp].mean(axis=1))
+  st.metric("Average", all_data[choice_data_exp].mean())
   st.metric("q3", all_data[choice_data_exp].quantile(q=0.75))
   st.metric("Max", all_data[choice_data_exp].max())
   st.dataframe(all_data)
