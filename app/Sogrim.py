@@ -133,8 +133,8 @@ elif nav == "Location Optimizer":
   #                         )
   # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-  #   counties = json.load(response)
+  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     data_json = json.load(response)
@@ -152,7 +152,7 @@ elif nav == "Location Optimizer":
   # st.write(data["gemeinde.NAME"])
   # st.write(gemeinde_json["features"][0]["properties"])
 
-  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='gemeinde.NAME', color='Anzahl Filialen Migros',
+  fig = px.choropleth_mapbox(data, geojson=counties, locations='gemeinde.NAME', color='Anzahl Filialen Migros',
                             color_continuous_scale="Viridis",
                             mapbox_style="carto-positron",
                             zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
