@@ -36,7 +36,7 @@ def load_GeoJSON():
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     geodf_2d = gp.GeoDataFrame.from_file(response)
   new_geo = []
-  for p in geometry:
+  for p in geodf_2d:
       if p.has_z:
           if p.geom_type == 'Polygon':
               lines = [xy[:2] for xy in list(p.exterior.coords)]
