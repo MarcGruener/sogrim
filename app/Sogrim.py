@@ -43,6 +43,7 @@ def convert_3D_2D(geometry):
               lines = [xy[:2] for xy in list(ap.exterior.coords)]
               new_p = Polygon(lines)
               new_geo.append(new_p)
+    st.write(len(new_geo))
     return new_geo
 
 @st.cache
