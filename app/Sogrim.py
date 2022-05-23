@@ -143,12 +143,6 @@ elif nav == "Location Optimizer":
     counties = json.load(response)
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
 
-  st.write(type(counties))
-  st.write(type(gemeinde_json))
-  st.json(counties)
-  st.json(gemeinde_json)
-  # st.write(df)
-  st.write(data)
 
   # fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
   #                          color_continuous_scale="Viridis",
@@ -165,7 +159,7 @@ elif nav == "Location Optimizer":
                            zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
                            opacity=0.5,
                           )
-  
+  fig.update_traces(locationmode="geojson-id")
 
   # fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
   #                   locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
