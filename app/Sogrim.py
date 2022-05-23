@@ -61,8 +61,7 @@ def get_data_unit(feature):
 
 
 st.sidebar.title("Sogrim")
-nav = st.sidebar.radio("Navigation", ("Data Exploration",
-                       "Model Performance", "Location Optimizer"))
+nav = st.sidebar.radio("Navigation", ("Data Exploration", "Location Optimizer"))
 st.sidebar.header("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.
 For this purpose, we leverage a wide range of data points from various pubic data sources such as the Federal Bureau of Statistics.""")
@@ -89,8 +88,6 @@ if nav == "Data Exploration":
       len(all_data[choice_data_exp])**0.5))
   st.plotly_chart(fig, use_container_width=True)
   st.dataframe(all_data)
-elif nav == "Model Performance":
-  st.write("This is Model Performance")
 
 elif nav == "Location Optimizer":
   predictions = load_predictions()
