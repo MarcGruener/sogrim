@@ -150,7 +150,7 @@ elif nav == "Location Optimizer":
   #                         )
   
   fig = px.choropleth_mapbox(data, geojson=data_json, featureidkey='properties.gemeinde.NAME',
-    ocations='gemeinde.NAME',
+    locations='gemeinde.NAME',
     color='Anzahl Filialen Migros',
                            color_continuous_scale="Viridis",
                            mapbox_style="carto-positron",
