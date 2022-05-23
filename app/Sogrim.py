@@ -50,7 +50,8 @@ def convert_3D_2D(geometry):
                     new_p = Polygon(lines)
                     new_multi_p.append(new_p)
                 #new_geo.append(MultiPolygon(new_multi_p))
-                new_geo.append(list(MultiPolygon(new_multi_p)))
+                for polygon in MultiPolygon(new_multi_p):
+                  new_geo.append(polygon)
     return new_geo
 
 @st.cache
