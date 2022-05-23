@@ -13,20 +13,27 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-
+@st.cache
 def load_all_data():
   data = pd.read_csv("./app/data.csv")
   data.rename(columns={"LAT_CNTR": "lat", "LONG_CNTR": "lon"}, inplace=True)
   return data
 
-
+@st.cache
 def load_predictions():
   data = pd.read_csv("./app/predictions.csv")
   return data
- 
+
+@st.cache
 def load_aggregated():
   data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
   return data
+
+@st.cache
+def load_GeoJSON():
+  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
+    gemeinden = json.load(response)
+  return gemeinden
 
 
 def get_data_unit(feature):
@@ -91,14 +98,15 @@ elif nav == "Model Performance":
 elif nav == "Location Optimizer":
   st.write("This is Location Optimizier")
 
-  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    gemeinden = json.load(response)
+  geoJSON = load_GeoJSON()
   
   aggregated = load_aggregated()
 
-  fig = px.choropleth(aggregated, geojson=gemeinden, color="Anzahl Filialen Migros",
+  fig = px.choropleth(aggregated, geojson=geoJSON, color="Anzahl Filialen Migros",
                     locations="GMDNAME", featureidkey="gemeinde.NAME",
                     projection="mercator", color_continuous_scale="Viridis",
                    )
   fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+  st.plotly_chart(fig, use_container_width=True)
+
