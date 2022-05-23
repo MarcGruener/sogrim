@@ -108,7 +108,7 @@ elif nav == "Location Optimizer":
   #                   scope="europe", hover_data=["GMDNAME", "Anzahl Filialen Migros"]
   #                  )
 
-  fig = px.choropleth_mapbox(aggregated, geojson=geoJSON, locations='GMDNAME', featureidkey="gemeinde.NAME", color='Anzahl Filialen Migros',
+  fig = px.choropleth_mapbox(aggregated, geojson=geoJSON, locations='GMDNAME', color='Anzahl Filialen Migros',
                            color_continuous_scale="Viridis",
                            mapbox_style="carto-positron",
                            zoom=3, center = {"lat": 46.8182, "lon": 8.2275},
