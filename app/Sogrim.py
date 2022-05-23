@@ -137,7 +137,7 @@ elif nav == "Location Optimizer":
   #   counties = json.load(response)
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    st.json(response)
+    st.write(response)
 
   gemeinden = load_GeoJSON()
   st.json(gemeinden)
