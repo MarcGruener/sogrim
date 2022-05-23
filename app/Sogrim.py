@@ -98,21 +98,35 @@ elif nav == "Model Performance":
 elif nav == "Location Optimizer":
   st.write("This is Location Optimizier")
 
-  geoJSON = load_GeoJSON()
+  # geoJSON = load_GeoJSON()
   
-  aggregated = load_aggregated()
+  # aggregated = load_aggregated()
 
-  # fig = px.choropleth(aggregated, geojson=geoJSON, color="Anzahl Filialen Migros",
-  #                   locations="GMDNAME", featureidkey="gemeinde.NAME",
-  #                   projection="mercator", color_continuous_scale="Viridis",
-  #                   scope="europe", hover_data=["GMDNAME", "Anzahl Filialen Migros"]
-  #                  )
 
-  fig = px.choropleth_mapbox(aggregated, geojson=geoJSON, locations='GMDNAME', color='Anzahl Filialen Migros',
-                           color_continuous_scale="Viridis",
-                           mapbox_style="carto-positron",
-                           zoom=3, center = {"lat": 46.8182, "lon": 8.2275},
-                          )
+  # fig = px.choropleth_mapbox(aggregated, geojson=geoJSON, locations='GMDNAME', color='Anzahl Filialen Migros',
+  #                          color_continuous_scale="Viridis",
+  #                          mapbox_style="carto-positron",
+  #                          zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
+  #                         )
+  # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+
+  import pandas as pd
+  df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+                    dtype={"fips": str})
+
+  import plotly.express as px
+
+  fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+                            color_continuous_scale="Viridis",
+                            range_color=(0, 12),
+                            scope="usa",
+                            labels={'unemp':'unemployment rate'}
+                            )
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+
+
   st.plotly_chart(fig, use_container_width=True)
 
