@@ -55,7 +55,7 @@ def convert_3D_2D(geometry):
 @st.cache
 def load_GeoJSON():
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    geodf_2d = gp.GeoDataFrame.from_file(response)
+    geodf_2d = gp.GeoDataFrame.from_file(json.load(response))
   geodf_2d.geometry = convert_3D_2D(geodf_2d.geometry)
 
 
