@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 from urllib.request import urlopen
 from shapely.geometry import Polygon, MultiPolygon, shape, Point
-import geopandas as gp
+import geopandas as gpd
 import json
 
 st.set_page_config(
@@ -36,7 +36,7 @@ def load_aggregated():
 def load_geojson():
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     json_data = json.load(response)
-    gdf_data = gp.GeoDataFrame.from_features(json_data)
+    gdf_data = gpd.GeoDataFrame.from_features(json_data)
   return gdf_data
 
 
@@ -119,4 +119,17 @@ elif nav == "Location Optimizer":
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
-  st.write(load_geojson())
+  geojson = load_geojson()
+
+  df = load_predictions()
+  geo_df = gpd.GeoDataFrame.from_features(geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+
+  fig = px.choropleth_mapbox(geo_df,
+                           geojson=geo_df.geometry,
+                           locations=geo_df.index,
+                           color="ANZAHL_FILIALEN_MIGROS",
+                           center={"lat": 45.5517, "lon": -73.7073},
+                           mapbox_style="open-street-map",
+                           zoom=8.5)
+  
+  st.map(fig)
