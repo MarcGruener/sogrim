@@ -119,11 +119,11 @@ elif nav == "Location Optimizer":
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
-  geojson = load_geojson()
-  st.json(geojson)
+  gpd_geojson = load_geojson()
+  st.dataframe(gpd_geojson)
 
   df = load_predictions()
-  geo_df = gpd.GeoDataFrame.from_features(geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+  geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
 
   fig = px.choropleth_mapbox(geo_df,
                            geojson=geo_df.geometry,
