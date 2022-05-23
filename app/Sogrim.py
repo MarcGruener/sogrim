@@ -40,10 +40,9 @@ def convert_3D_2D(geometry):
     st.write(len(geometry))
     for p in geometry:
         if p.has_z:
-          for ap in p:
-              lines = [xy[:2] for xy in list(ap.exterior.coords)]
-              new_p = Polygon(lines)
-              new_geo.append(new_p)
+          lines = [xy[:2] for xy in list(p[0].exterior.coords)]
+          new_p = Polygon(lines)
+          new_geo.append(new_p)
     st.write(len(new_geo))
     return new_geo
 
