@@ -23,6 +23,10 @@ def load_all_data():
 def load_predictions():
   data = pd.read_csv("./app/predictions.csv")
   return data
+ 
+def load_aggregated():
+  data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
+  return data
 
 
 def get_data_unit(feature):
@@ -89,13 +93,19 @@ elif nav == "Location Optimizer":
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     gemeinden = json.load(response)
-    
+  
+  aggregated = load_aggregated()
 
   st.json(gemeinden)
   st.write("TEST")
   st.write(gemeinden)
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv", dtype={"fips": str})
-  # fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+  fig = px.choropleth(aggregated, geojson=gemeinden, color="Bergeron",
+                    locations="GMDNAME", featureidkey="gemeinde.NAME",
+                    projection="mercator"
+                   )
+  fig.update_geos(fitbounds="locations", visible=False)
+  fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   # color_continuous_scale="Viridis",
   # range_color=(0, 12),
   # scope="usa",
