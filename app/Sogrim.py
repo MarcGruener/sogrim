@@ -156,7 +156,7 @@ elif nav == "Location Optimizer":
   #                           opacity=0.5,
   #                           )
   
-  st.write(data)
+  st.write(data["gemeinde.NAME"])
   st.write(gemeinde_json["features"][0]["properties"])
 
 
@@ -164,7 +164,7 @@ elif nav == "Location Optimizer":
                     locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
                     projection="mercator"
                    )
-
+  fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
 
