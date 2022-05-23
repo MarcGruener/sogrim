@@ -100,7 +100,7 @@ elif nav == "Location Optimizer":
   st.write("TEST")
   st.write(gemeinden)
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv", dtype={"fips": str})
-  fig = px.choropleth(aggregated, geojson=gemeinden, color="Bergeron",
+  fig = px.choropleth(aggregated, geojson=gemeinden, color="Anzahl Filialen Migros",
                     locations="GMDNAME", featureidkey="gemeinde.NAME",
                     projection="mercator"
                    )
