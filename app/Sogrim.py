@@ -149,22 +149,23 @@ elif nav == "Location Optimizer":
   data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
 
 
-  # fig = px.choropleth_mapbox(data, geojson=gemeinden, locations='GMDNAME', color='Anzahl Filialen Migros',
-  #                           color_continuous_scale="Viridis",
-  #                           mapbox_style="carto-positron",
-  #                           zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
-  #                           opacity=0.5,
-  #                           )
+  # st.write(data["gemeinde.NAME"])
+  # st.write(gemeinde_json["features"][0]["properties"])
+
+  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='GMDNAME', color='Anzahl Filialen Migros',
+                            color_continuous_scale="Viridis",
+                            mapbox_style="carto-positron",
+                            zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
+                            opacity=0.5,
+                            )
   
-  st.write(data["gemeinde.NAME"])
-  st.write(gemeinde_json["features"][0]["properties"])
 
+  # fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
+  #                   locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
+  #                   projection="mercator"
+  #                  )
+  # fig.update_geos(fitbounds="locations", visible=False)
 
-  fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
-                    locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
-                    projection="mercator"
-                   )
-  fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
 
