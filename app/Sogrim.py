@@ -119,18 +119,18 @@ elif nav == "Location Optimizer":
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
-  # gpd_geojson = load_geojson()
-  st.dataframe(load_geojson())
+  gpd_geojson = load_geojson()
+  st.json(gpd_geojson)
 
-  df = load_predictions()
-  geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+  # df = load_predictions()
+  # geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
 
-  fig = px.choropleth_mapbox(geo_df,
-                           geojson=geo_df.geometry,
-                           locations=geo_df.index,
-                           color="ANZAHL_FILIALEN_MIGROS",
-                           center={"lat": 45.5517, "lon": -73.7073},
-                           mapbox_style="open-street-map",
-                           zoom=8.5)
+  # fig = px.choropleth_mapbox(geo_df,
+  #                          geojson=geo_df.geometry,
+  #                          locations=geo_df.index,
+  #                          color="ANZAHL_FILIALEN_MIGROS",
+  #                          center={"lat": 45.5517, "lon": -73.7073},
+  #                          mapbox_style="open-street-map",
+  #                          zoom=8.5)
   
-  st.map(fig)
+  # st.map(fig)
