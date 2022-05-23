@@ -105,12 +105,12 @@ elif nav == "Location Optimizer":
   elif choice_option == "Opportunities":
     location_data = predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]
   
-  st.map(location_data[[choice_model,"lat", "lon"]])
-
   col1, col2, col3 = st.columns(3)
 
   col1.metric("# Consolidations", len(predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS]))
   col2.metric("# Same", len(predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS]))
   col3.metric("# Opportunities", len(predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]))
+
+  st.map(location_data[[choice_model,"lat", "lon"]])
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
