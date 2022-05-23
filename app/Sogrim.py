@@ -96,13 +96,15 @@ elif nav == "Location Optimizer":
   predictions = load_predictions()
   st.write("This is Location Optimizier")
   col1, col2 = st.columns(2)
-  choice_model = col1.selectbox("Select a Model", list(predictions.columns))
+  choice_model = col1.selectbox("Select a Model", list(predictions.drop(["GMDNAME", "lat", "lon"]).columns))
   choice_option = col2.selectbox("Select a Group", ("Consolidation", "Perfect", "Opportunities"))
 
   if choice_model == "Consolidation":
-    st.map(predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS])
+    location_data = predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS]
   elif choice_model == "Perfect":
-    st.map(predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS])
+    location_data = predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS]
   elif choice_model == "Opportunities":
-    st.map(predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS])
+    location_data = predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]
+  
+  st.map(location_data[choice_model])
 
