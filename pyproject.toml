@@ -1,4 +1,4 @@
-[tool.poetry]
+poe[tool.poetry]
 name = "sogrim"
 version = "0.1.0"
 description = ""
