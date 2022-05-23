@@ -137,7 +137,7 @@ elif nav == "Location Optimizer":
   #   counties = json.load(response)
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    data = json.load(response)
+    data_json = json.load(response)
 
     gemeinden = gp.GeoDataFrame.from_features(data["features"])
     gemeinden.geometry = convert_3D_2D(gemeinden.geometry)
@@ -156,7 +156,7 @@ elif nav == "Location Optimizer":
   #                           )
   
   st.write(data["GMDNAME"][0])
-  st.json(data)
+  st.json(data_json)
 
 
   fig = px.choropleth(data, geojson=gemeinden, color="Anzahl Filialen Migros",
