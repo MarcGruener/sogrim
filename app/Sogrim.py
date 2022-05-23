@@ -119,8 +119,8 @@ elif nav == "Location Optimizer":
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
-  gpd_geojson = load_geojson()
-  st.dataframe(gpd_geojson)
+  # gpd_geojson = load_geojson()
+  st.dataframe(load_geojson())
 
   df = load_predictions()
   geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
