@@ -140,7 +140,7 @@ elif nav == "Location Optimizer":
     data = json.load(response)
     st.json(data)
 
-    gemeinden = gp.GeoDataFrame.from_file(data)
+    gemeinden = gp.GeoDataFrame.from_features(data["features"])
     gemeinden.geometry = convert_3D_2D(gemeinden.geometry)
 
     st.write(gemeinden)
