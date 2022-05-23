@@ -84,19 +84,19 @@ if nav == "Data Exploration":
 elif nav == "Model Performance":
   st.write("This is Model Performance")
 
-  
-  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-    counties = json.load(response)
-
-  df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv", dtype={"fips": str})
-  fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
-  color_continuous_scale="Viridis",
-  range_color=(0, 12),
-  scope="usa",
-  labels={'unemp': 'unemployment rate'}
-  )
-  fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-  st.plotly_chart(fig, use_container_width=True)
-
 elif nav == "Location Optimizer":
   st.write("This is Location Optimizier")
+
+  with urlopen('https://datahub.io/cividi/ch-municipalities/datapackage.json') as response:
+    gemeinden = json.load(response)
+  
+  st.json(gemeinden)
+  # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv", dtype={"fips": str})
+  # fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+  # color_continuous_scale="Viridis",
+  # range_color=(0, 12),
+  # scope="usa",
+  # labels={'unemp': 'unemployment rate'}
+  # )
+  # fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+  # st.plotly_chart(fig, use_container_width=True)
