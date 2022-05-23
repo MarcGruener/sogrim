@@ -37,13 +37,11 @@ def convert_3D_2D(geometry):
     Takes a GeoSeries of 3D Multi/Polygons (has_z) and returns a list of 2D Multi/Polygons
     '''
     new_geo = []
-    st.write(len(geometry))
     for p in geometry:
         if p.has_z:
           lines = [xy[:2] for xy in list(p[0].exterior.coords)]
           new_p = Polygon(lines)
           new_geo.append(new_p)
-    st.write(len(new_geo))
     return new_geo
 
 @st.cache
@@ -141,33 +139,31 @@ elif nav == "Location Optimizer":
   # st.write(data["gemeinde.NAME"])
   # st.write(gemeinde_json["features"][0]["properties"])
 
-  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-    counties = json.load(response)
-  df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
+  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+  #   counties = json.load(response)
+  # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
 
-  st.write(type(counties))
+  # st.write(type(counties))
   st.write(type(gemeinde_json))
-  st.json(counties)
+  # st.json(counties)
   st.json(gemeinde_json)
-  st.write(df)
+  # st.write(df)
   st.write(data)
 
-  fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
-                           color_continuous_scale="Viridis",
-                           range_color=(0, 12),
-                           mapbox_style="carto-positron",
-                           zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
-                           opacity=0.5,
-                           labels={'unemp':'unemployment rate'}
-                          )
+  # fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
+  #                          color_continuous_scale="Viridis",
+  #                          range_color=(0, 12),
+  #                          mapbox_style="carto-positron",
+  #                          zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+  #                          opacity=0.5,
+  #                          labels={'unemp':'unemployment rate'}
+  #                         )
   
-  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='fips', color='unemp',
+  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='gemeinde.NAME', color='Anzahl Filialen Migros',
                            color_continuous_scale="Viridis",
-                           range_color=(0, 12),
                            mapbox_style="carto-positron",
                            zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
                            opacity=0.5,
-                           labels={'unemp':'unemployment rate'}
                           )
   
 
