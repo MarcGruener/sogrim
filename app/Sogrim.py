@@ -87,8 +87,9 @@ elif nav == "Model Performance":
 elif nav == "Location Optimizer":
   st.write("This is Location Optimizier")
 
-  with urlopen('https://datahub.io/cividi/ch-municipalities/datapackage.json') as response:
+  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     gemeinden = json.load(response)
+    
 
   st.json(gemeinden)
   st.write("TEST")
