@@ -6,7 +6,7 @@ import plotly.express as px
 from urllib.request import urlopen
 from shapely.geometry import Polygon, MultiPolygon, shape, Point
 import geopandas as gp
-
+import json
 
 st.set_page_config(
     page_title="Sogrim",
