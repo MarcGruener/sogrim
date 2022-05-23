@@ -127,11 +127,7 @@ elif nav == "Location Optimizer":
 
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    data_json = json.load(response)
-
-    gemeinden = gp.GeoDataFrame.from_features(data_json["features"])
-    gemeinden.geometry = convert_3D_2D(gemeinden.geometry)
-    gemeinde_json = json.loads(gemeinden.to_json())
+    data_json = json.loads(response)
 
   data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
 
@@ -153,10 +149,11 @@ elif nav == "Location Optimizer":
   #                          labels={'unemp':'unemployment rate'}
   #                         )
   
-  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='gemeinde.NAME', color='Anzahl Filialen Migros',
+  fig = px.choropleth_mapbox(data, geojson=data_json, featureidkey='properties.gemeinde.NAME',
+    ocations='gemeinde.NAME',
+    color='Anzahl Filialen Migros',
                            color_continuous_scale="Viridis",
                            mapbox_style="carto-positron",
-                           locationmode="geojson-id",
                            zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
                            opacity=0.5,
                           )
