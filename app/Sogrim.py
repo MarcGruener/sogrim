@@ -145,7 +145,7 @@ elif nav == "Location Optimizer":
 
   st.write(type(counties))
   st.write(type(gemeinde_json))
-  # st.json(counties)
+  st.json(counties)
   st.json(gemeinde_json)
   # st.write(df)
   st.write(data)
