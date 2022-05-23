@@ -1,4 +1,4 @@
-poe[tool.poetry]
+[tool.poetry]
 name = "sogrim"
 version = "0.1.0"
 description = ""
@@ -12,6 +12,8 @@ streamlit = "^1.9.0"
 xgboost = "^1.6.1"
 sklearn = "^0.0"
 plotly = "^5.8.0"
+geopandas = "^0.10.2"
+Shapely = "^1.8.2"
 
 [tool.poetry.dev-dependencies]
 
