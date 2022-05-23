@@ -106,5 +106,5 @@ elif nav == "Location Optimizer":
   elif choice_model == "Opportunities":
     location_data = predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]
   
-  st.map(location_data[choice_model])
+  st.map(location_data[[choice_model,"lat", "lon"]])
 
