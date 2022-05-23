@@ -37,7 +37,6 @@ def convert_3D_2D(geometry):
     Takes a GeoSeries of 3D Multi/Polygons (has_z) and returns a list of 2D Multi/Polygons
     '''
     new_geo = []
-    st.write(len(geometry))
     for p in geometry:
         if p.has_z:
           new_multi_p = []
@@ -48,6 +47,7 @@ def convert_3D_2D(geometry):
           #new_geo.append(MultiPolygon(new_multi_p))
           for polygon in MultiPolygon(new_multi_p):
             new_geo.append(polygon)
+    st.write(len(new_geo))
     return new_geo
 
 @st.cache
