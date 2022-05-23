@@ -159,19 +159,19 @@ elif nav == "Location Optimizer":
   #                          labels={'unemp':'unemployment rate'}
   #                         )
   
-  # fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='gemeinde.NAME', color='Anzahl Filialen Migros',
-  #                          color_continuous_scale="Viridis",
-  #                          mapbox_style="carto-positron",
-  #                          zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
-  #                          opacity=0.5,
-  #                         )
+  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='gemeinde.NAME', color='Anzahl Filialen Migros',
+                           color_continuous_scale="Viridis",
+                           mapbox_style="carto-positron",
+                           zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+                           opacity=0.5,
+                          )
   
 
-  fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
-                    locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
-                    projection="mercator"
-                   )
-  fig.update_geos(fitbounds="locations", visible=False)
+  # fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
+  #                   locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
+  #                   projection="mercator"
+  #                  )
+  # fig.update_geos(fitbounds="locations", visible=False)
 
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
