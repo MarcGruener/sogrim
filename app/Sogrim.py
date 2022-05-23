@@ -102,11 +102,17 @@ elif nav == "Location Optimizer":
   
   aggregated = load_aggregated()
 
-  fig = px.choropleth(aggregated, geojson=geoJSON, color="Anzahl Filialen Migros",
-                    locations="GMDNAME", featureidkey="gemeinde.NAME",
-                    projection="mercator", color_continuous_scale="Viridis",
-                    scope="europe", hover_data=["GMDNAME", "Anzahl Filialen Migros"]
-                   )
+  # fig = px.choropleth(aggregated, geojson=geoJSON, color="Anzahl Filialen Migros",
+  #                   locations="GMDNAME", featureidkey="gemeinde.NAME",
+  #                   projection="mercator", color_continuous_scale="Viridis",
+  #                   scope="europe", hover_data=["GMDNAME", "Anzahl Filialen Migros"]
+  #                  )
+
+  fig = px.choropleth_mapbox(aggregated, geojson=geoJSON, locations='GMDNAME', featureidkey="gemeinde.NAME", color='Anzahl Filialen Migros',
+                           color_continuous_scale="Viridis",
+                           mapbox_style="carto-positron",
+                           zoom=3, center = {"lat": 46.8182, "lon": 8.2275},
+                          )
   fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
