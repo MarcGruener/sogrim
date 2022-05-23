@@ -49,7 +49,8 @@ def convert_3D_2D(geometry):
                     lines = [xy[:2] for xy in list(ap.exterior.coords)]
                     new_p = Polygon(lines)
                     new_multi_p.append(new_p)
-                new_geo.append(MultiPolygon(new_multi_p))
+                #new_geo.append(MultiPolygon(new_multi_p))
+                new_geo.append(list(MultiPolygon(new_multi_p)))
     return new_geo
 
 @st.cache
@@ -159,6 +160,15 @@ elif nav == "Location Optimizer":
   st.write(data)
 
   fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           mapbox_style="carto-positron",
+                           zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+                           opacity=0.5,
+                           labels={'unemp':'unemployment rate'}
+                          )
+  
+  fig = px.choropleth_mapbox(data, geojson=gemeinde_json, locations='fips', color='unemp',
                            color_continuous_scale="Viridis",
                            range_color=(0, 12),
                            mapbox_style="carto-positron",
