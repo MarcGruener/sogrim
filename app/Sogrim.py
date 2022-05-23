@@ -24,31 +24,13 @@ def load_all_data():
 @st.cache
 def load_predictions():
   data = pd.read_csv("./app/predictions.csv")
+  data.rename(columns={"LAT_CNTR": "lat", "LONG_CNTR": "lon"}, inplace=True)
   return data
 
 @st.cache
 def load_aggregated():
-  data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
+  data = pd.read_csv("./app/aggregated.csv")
   return data
-
-
-def convert_3D_2D(geometry):
-    '''
-    Takes a GeoSeries of 3D Multi/Polygons (has_z) and returns a list of 2D Multi/Polygons
-    '''
-    new_geo = []
-    for p in geometry:
-        if p.has_z:
-          lines = [xy[:2] for xy in list(p[0].exterior.coords)]
-          new_p = Polygon(lines)
-          new_geo.append(new_p)
-    return new_geo
-
-@st.cache
-def load_GeoJSON():
-  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    geodf_2d = gp.GeoDataFrame.from_file(json.load(response))
-  geodf_2d.geometry = convert_3D_2D(geodf_2d.geometry)
 
 @st.cache
 def get_data_unit(feature):
@@ -111,61 +93,16 @@ elif nav == "Model Performance":
   st.write("This is Model Performance")
 
 elif nav == "Location Optimizer":
+  predictions = load_predictions()
   st.write("This is Location Optimizier")
+  col1, col2 = st.columns(2)
+  choice_model = col1.selectbox("Select a Model", list(predictions.columns))
+  choice_option = col2.selectbox("Select a Group", ("Consolidation", "Perfect", "Opportunities"))
 
-  # geoJSON = load_GeoJSON()
-  
-  # aggregated = load_aggregated()
-
-
-  # fig = px.choropleth_mapbox(aggregated, geojson=geoJSON, locations='GMDNAME', color='Anzahl Filialen Migros',
-  #                          color_continuous_scale="Viridis",
-  #                          mapbox_style="carto-positron",
-  #                          zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
-  #                         )
-  # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-
-  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    data_json = json.load(response)
-    data_json = data_json.replace("gemeinde.NAME", "GMDNAME")
-    
-
-  data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
-
-
-  # st.write(data["gemeinde.NAME"])
-  # st.write(gemeinde_json["features"][0]["properties"])
-
-  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-  #   counties = json.load(response)
-  # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
-
-
-  # fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
-  #                          color_continuous_scale="Viridis",
-  #                          range_color=(0, 12),
-  #                          mapbox_style="carto-positron",
-  #                          zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
-  #                          opacity=0.5,
-  #                          labels={'unemp':'unemployment rate'}
-  #                         )
-  
-  fig = px.choropleth_mapbox(data, geojson=data_json, featureidkey='properties.GMDNAME',
-    locations='GMDNAME',
-    color='Anzahl Filialen Migros',
-                           color_continuous_scale="Viridis",
-                           mapbox_style="carto-positron",
-                           zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
-                           opacity=0.5,
-                          )
-
-  # fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
-  #                   locations="gemeinde.NAME", featureidkey="properties.gemeinde.NAME",
-  #                   projection="mercator"
-  #                  )
-  # fig.update_geos(fitbounds="locations", visible=False)
-
-  fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-  st.plotly_chart(fig, use_container_width=True)
+  if choice_model == "Consolidation":
+    st.map(predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS])
+  elif choice_model == "Perfect":
+    st.map(predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS])
+  elif choice_model == "Opportunities":
+    st.map(predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS])
 
