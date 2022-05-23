@@ -159,7 +159,7 @@ elif nav == "Location Optimizer":
                     locations="GMDNAME", featureidkey="gemeinde.NAME",
                     projection="mercator"
                    )
-  fig.update_geos(fitbounds="locations", visible=False)
+
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
 
