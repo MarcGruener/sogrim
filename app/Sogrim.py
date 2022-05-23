@@ -95,7 +95,7 @@ elif nav == "Model Performance":
 elif nav == "Location Optimizer":
   predictions = load_predictions()
   col1, col2 = st.columns(2)
-  choice_model = col1.selectbox("Select a Model", list(predictions.drop(["GMDNAME", "lat", "lon"], axis=1).columns))
+  choice_model = col1.selectbox("Select a Model", list(predictions.drop(["GMDNAME", "lat", "lon", "ANZAHL_FILIALEN_MIGROS"], axis=1).columns))
   choice_option = col2.selectbox("Select a Group", ("Consolidation", "Perfect", "Opportunities"))
 
   if choice_option == "Consolidation":
