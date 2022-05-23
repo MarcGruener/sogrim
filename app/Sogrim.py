@@ -119,10 +119,12 @@ elif nav == "Location Optimizer":
 
   import plotly.express as px
 
-  fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
+  fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
                             color_continuous_scale="Viridis",
                             range_color=(0, 12),
-                            scope="usa",
+                            mapbox_style="carto-positron",
+                            zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+                            opacity=0.5,
                             labels={'unemp':'unemployment rate'}
                             )
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
