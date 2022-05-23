@@ -127,7 +127,7 @@ elif nav == "Location Optimizer":
 
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    data_json = json.loads(response)
+    data_json = json.load(response)
 
   data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
 
@@ -135,8 +135,8 @@ elif nav == "Location Optimizer":
   # st.write(data["gemeinde.NAME"])
   # st.write(gemeinde_json["features"][0]["properties"])
 
-  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-    counties = json.load(response)
+  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+  #   counties = json.load(response)
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
 
 
