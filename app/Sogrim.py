@@ -119,4 +119,4 @@ elif nav == "Location Optimizer":
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
-  st.json(load_geojson())
+  st.dataframe(load_geojson())
