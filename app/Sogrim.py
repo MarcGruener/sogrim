@@ -37,9 +37,9 @@ def convert_3D_2D(geometry):
     Takes a GeoSeries of 3D Multi/Polygons (has_z) and returns a list of 2D Multi/Polygons
     '''
     new_geo = []
+    st.write(len(geometry))
     for p in geometry:
         if p.has_z:
-          st.write(len(p))
           for ap in p:
               lines = [xy[:2] for xy in list(ap.exterior.coords)]
               new_p = Polygon(lines)
