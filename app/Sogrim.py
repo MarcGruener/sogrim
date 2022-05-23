@@ -35,8 +35,9 @@ def load_aggregated():
 @st.cache
 def load_geojson():
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-     data = gp.GeoDataFrame.from_file(json.load(response))
-  return data
+     json_data = json.load(response)
+     gdf_data = gp.GeoDataFrame.from_features(json_data)
+  return json_data
 
 
 @st.cache
