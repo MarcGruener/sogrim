@@ -138,12 +138,9 @@ elif nav == "Location Optimizer":
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     data = json.load(response)
-    st.json(data)
 
     gemeinden = gp.GeoDataFrame.from_features(data["features"])
     gemeinden.geometry = convert_3D_2D(gemeinden.geometry)
-
-    st.write(gemeinden)
 
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
   #                   dtype={"fips": str})
@@ -151,12 +148,18 @@ elif nav == "Location Optimizer":
   data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
 
 
-  fig = px.choropleth_mapbox(data, geojson=gemeinden, locations='GMDNAME', color='Anzahl Filialen Migros',
-                            color_continuous_scale="Viridis",
-                            mapbox_style="carto-positron",
-                            zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
-                            opacity=0.5,
-                            )
+  # fig = px.choropleth_mapbox(data, geojson=gemeinden, locations='GMDNAME', color='Anzahl Filialen Migros',
+  #                           color_continuous_scale="Viridis",
+  #                           mapbox_style="carto-positron",
+  #                           zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
+  #                           opacity=0.5,
+  #                           )
+  
+  fig = px.choropleth(data, geojson=gemeinden, color="Anzahl Filialen Migros",
+                    locations="GMDNAME", featureidkey="gemeinde.NAME",
+                    projection="mercator"
+                   )
+  fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
 
