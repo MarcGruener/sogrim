@@ -138,6 +138,7 @@ elif nav == "Location Optimizer":
 
 
   gemeinden = load_GeoJSON()
+  st.json(gemeinden)
 
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
   #                   dtype={"fips": str})
