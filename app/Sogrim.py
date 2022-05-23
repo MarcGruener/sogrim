@@ -31,13 +31,13 @@ def load_aggregated():
   data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
   return data
 
-@st.cache
+
 def convert_3D_2D(geometry):
     '''
     Takes a GeoSeries of 3D Multi/Polygons (has_z) and returns a list of 2D Multi/Polygons
     '''
     new_geo = []
-    print(len(geometry))
+    st.write(len(geometry))
     for p in geometry:
         if p.has_z:
           new_multi_p = []
