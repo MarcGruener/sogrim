@@ -139,7 +139,7 @@ elif nav == "Location Optimizer":
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
     data_json = json.load(response)
 
-    gemeinden = gp.GeoDataFrame.from_features(data["features"])
+    gemeinden = gp.GeoDataFrame.from_features(data_json["features"])
     gemeinden.geometry = convert_3D_2D(gemeinden.geometry)
 
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
