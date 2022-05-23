@@ -141,7 +141,7 @@ elif nav == "Location Optimizer":
 
     gemeinden = gp.GeoDataFrame.from_features(data_json["features"])
     gemeinden.geometry = convert_3D_2D(gemeinden.geometry)
-    gemeinde_json = gemeinden.to_json()
+    gemeinde_json = json.loads(gemeinden.to_json())
 
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
   #                   dtype={"fips": str})
