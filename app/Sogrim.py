@@ -96,20 +96,9 @@ elif nav == "Location Optimizer":
   
   aggregated = load_aggregated()
 
-  st.json(gemeinden)
-  st.write("TEST")
-  st.write(gemeinden)
-  # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv", dtype={"fips": str})
   fig = px.choropleth(aggregated, geojson=gemeinden, color="Anzahl Filialen Migros",
                     locations="GMDNAME", featureidkey="gemeinde.NAME",
-                    projection="mercator"
+                    projection="mercator", color_continuous_scale="Viridis",
                    )
   fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-  # color_continuous_scale="Viridis",
-  # range_color=(0, 12),
-  # scope="usa",
-  # labels={'unemp': 'unemployment rate'}
-  # )
-  # fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-  # st.plotly_chart(fig, use_container_width=True)
