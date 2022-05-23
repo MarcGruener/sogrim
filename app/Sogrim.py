@@ -105,8 +105,8 @@ elif nav == "Location Optimizer":
   fig = px.choropleth(aggregated, geojson=geoJSON, color="Anzahl Filialen Migros",
                     locations="GMDNAME", featureidkey="gemeinde.NAME",
                     projection="mercator", color_continuous_scale="Viridis",
+                    zoom=3, center={"lat":46.8182,"long":8.2275}
                    )
-  fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
 
