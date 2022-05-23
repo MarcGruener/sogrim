@@ -50,7 +50,7 @@ def load_GeoJSON():
     geodf_2d = gp.GeoDataFrame.from_file(json.load(response))
   geodf_2d.geometry = convert_3D_2D(geodf_2d.geometry)
 
-
+@st.cache
 def get_data_unit(feature):
   data_unit = {
       "BEVDICHTE_SQKM_2019": "p/sqkm",
@@ -139,11 +139,11 @@ elif nav == "Location Optimizer":
   # st.write(data["gemeinde.NAME"])
   # st.write(gemeinde_json["features"][0]["properties"])
 
-  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-  #   counties = json.load(response)
+  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
 
-  # st.write(type(counties))
+  st.write(type(counties))
   st.write(type(gemeinde_json))
   # st.json(counties)
   st.json(gemeinde_json)
