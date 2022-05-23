@@ -159,6 +159,7 @@ elif nav == "Location Optimizer":
   st.write(data["GMDNAME"][0])
   st.json(data_json)
   st.json(gemeinde_json)
+  st.write(gemeinde_json["features"][0]["gemeinde.NAME"])
 
 
   fig = px.choropleth(data, geojson=gemeinde_json, color="Anzahl Filialen Migros",
