@@ -110,25 +110,24 @@ elif nav == "Location Optimizer":
   #                         )
   # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-    counties = json.load(response)
+  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+  #   counties = json.load(response)
 
-  import pandas as pd
-  df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
-                    dtype={"fips": str})
+  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
+    gemeinden = json.load(response)
 
-  import plotly.express as px
+  # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+  #                   dtype={"fips": str})
 
-  fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
+  data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
+
+
+  fig = px.choropleth_mapbox(data, geojson=gemeinden, locations='GMDNAME', color='Anzahl Filialen Migros',
                             color_continuous_scale="Viridis",
-                            range_color=(0, 12),
                             mapbox_style="carto-positron",
-                            zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+                            zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
                             opacity=0.5,
-                            labels={'unemp':'unemployment rate'}
                             )
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-
   st.plotly_chart(fig, use_container_width=True)
 
