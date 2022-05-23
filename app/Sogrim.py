@@ -156,7 +156,7 @@ elif nav == "Location Optimizer":
   #                           opacity=0.5,
   #                           )
   
-  st.write(data["gemeinde.NAME"][0])
+  st.write(data)
   st.write(gemeinde_json["features"][0]["properties"])
 
 
