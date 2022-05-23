@@ -70,7 +70,6 @@ if nav == "Data Exploration":
   st.write("This is Data Exploration")
   all_data = load_all_data()
   choice_data_exp = st.selectbox("Select a Feature", list(all_data.columns))
-  st.write(choice_data_exp)
   col1, col2, col3, col4, col5, col6 = st.columns(6)
   col1.metric("Min", str(all_data[choice_data_exp].min().round(
       2))+" "+get_data_unit(choice_data_exp))
