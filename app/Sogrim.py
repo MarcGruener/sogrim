@@ -33,6 +33,13 @@ def load_aggregated():
   return data
 
 @st.cache
+def load_geojson():
+  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
+     data = gp.GeoDataFrame.from_file(json.load(response))
+  return data
+
+
+@st.cache
 def get_data_unit(feature):
   data_unit = {
       "BEVDICHTE_SQKM_2019": "p/sqkm",
@@ -110,3 +117,5 @@ elif nav == "Location Optimizer":
   st.map(location_data[[choice_model,"lat", "lon"]])
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
+
+  st.json(load_geojson())
