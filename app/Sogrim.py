@@ -39,15 +39,10 @@ def convert_3D_2D(geometry):
     new_geo = []
     for p in geometry:
         if p.has_z:
-          new_multi_p = []
           for ap in p:
               lines = [xy[:2] for xy in list(ap.exterior.coords)]
               new_p = Polygon(lines)
-              new_multi_p.append(new_p)
-          #new_geo.append(MultiPolygon(new_multi_p))
-          for polygon in MultiPolygon(new_multi_p):
-            new_geo.append(polygon)
-    st.write(len(new_geo))
+              new_geo.append(new_p)
     return new_geo
 
 @st.cache
