@@ -89,8 +89,10 @@ elif nav == "Location Optimizer":
 
   with urlopen('https://datahub.io/cividi/ch-municipalities/datapackage.json') as response:
     gemeinden = json.load(response)
-  
+
   st.json(gemeinden)
+  st.write("TEST")
+  st.write(gemeinden)
   # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv", dtype={"fips": str})
   # fig = px.choropleth(df, geojson=counties, locations='fips', color='unemp',
   # color_continuous_scale="Viridis",
