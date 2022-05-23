@@ -151,6 +151,10 @@ elif nav == "Location Optimizer":
     counties = json.load(response)
   df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",dtype={"fips": str})
 
+  st.write(type(counties))
+  st.jason(counties)
+  st.write(df)
+
   fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
                            color_continuous_scale="Viridis",
                            range_color=(0, 12),
