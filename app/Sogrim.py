@@ -113,7 +113,6 @@ elif nav == "Location Optimizer":
                            mapbox_style="carto-positron",
                            zoom=3, center = {"lat": 46.8182, "lon": 8.2275},
                           )
-  fig.update_geos(fitbounds="locations", visible=False)
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
   st.plotly_chart(fig, use_container_width=True)
 
