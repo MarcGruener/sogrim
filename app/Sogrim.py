@@ -35,8 +35,8 @@ def load_aggregated():
 @st.cache
 def load_geojson():
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-     json_data = json.load(response)
-     gdf_data = gp.GeoDataFrame.from_features(json_data)
+    json_data = json.load(response)
+    gdf_data = gp.GeoDataFrame.from_features(json_data)
   return gdf_data
 
 
@@ -119,4 +119,4 @@ elif nav == "Location Optimizer":
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
-  st.dataframe(load_geojson())
+  st.write(load_geojson())
