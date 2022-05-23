@@ -37,6 +37,7 @@ def convert_3D_2D(geometry):
     Takes a GeoSeries of 3D Multi/Polygons (has_z) and returns a list of 2D Multi/Polygons
     '''
     new_geo = []
+    print(len(geometry))
     for p in geometry:
         if p.has_z:
           new_multi_p = []
