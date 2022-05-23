@@ -5,6 +5,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from urllib.request import urlopen
+from shapely.geometry import Polygon, MultiPolygon, shape, Point
+import geopandas as gp
+
 
 st.set_page_config(
     page_title="Sogrim",
@@ -32,8 +35,22 @@ def load_aggregated():
 @st.cache
 def load_GeoJSON():
   with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    gemeinden = json.load(response)
-  return gemeinden
+    geodf_2d = gp.GeoDataFrame.from_file(response)
+  new_geo = []
+  for p in geometry:
+      if p.has_z:
+          if p.geom_type == 'Polygon':
+              lines = [xy[:2] for xy in list(p.exterior.coords)]
+              new_p = Polygon(lines)
+              new_geo.append(new_p)
+          elif p.geom_type == 'MultiPolygon':
+              new_multi_p = []
+              for ap in p:
+                  lines = [xy[:2] for xy in list(ap.exterior.coords)]
+                  new_p = Polygon(lines)
+                  new_multi_p.append(new_p)
+              new_geo.append(Polygon(new_multi_p))
+  return new_geo
 
 
 def get_data_unit(feature):
@@ -110,25 +127,24 @@ elif nav == "Location Optimizer":
   #                         )
   # fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 
-  with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-    counties = json.load(response)
+  # with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+  #   counties = json.load(response)
 
-  import pandas as pd
-  df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
-                    dtype={"fips": str})
 
-  import plotly.express as px
+  gemeinden = load_GeoJSON()
 
-  fig = px.choropleth_mapbox(df, geojson=counties, locations='fips', color='unemp',
+  # df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+  #                   dtype={"fips": str})
+
+  data = pd.read_excel("./models/aggregated.xlsx", sheet_name="Main")
+
+
+  fig = px.choropleth_mapbox(data, geojson=gemeinden, locations='GMDNAME', color='Anzahl Filialen Migros',
                             color_continuous_scale="Viridis",
-                            range_color=(0, 12),
                             mapbox_style="carto-positron",
-                            zoom=3, center = {"lat": 37.0902, "lon": -95.7129},
+                            zoom=5, center = {"lat": 46.8182, "lon": 8.2275},
                             opacity=0.5,
-                            labels={'unemp':'unemployment rate'}
                             )
   fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-
-
   st.plotly_chart(fig, use_container_width=True)
 
