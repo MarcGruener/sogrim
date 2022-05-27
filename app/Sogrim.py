@@ -15,11 +15,13 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
 @st.cache
 def load_all_data():
   data = pd.read_csv("./app/data.csv")
   data.rename(columns={"LAT_CNTR": "lat", "LONG_CNTR": "lon"}, inplace=True)
   return data
+
 
 @st.cache
 def load_predictions():
@@ -27,10 +29,12 @@ def load_predictions():
   data.rename(columns={"LAT_CNTR": "lat", "LONG_CNTR": "lon"}, inplace=True)
   return data
 
+
 @st.cache
 def load_aggregated():
   data = pd.read_csv("./app/aggregated.csv")
   return data
+
 
 @st.cache
 def load_geojson():
@@ -69,7 +73,8 @@ def get_data_unit(feature):
 
 
 st.sidebar.title("Sogrim")
-nav = st.sidebar.radio("Navigation", ("Data Exploration", "Location Optimizer"))
+nav = st.sidebar.radio(
+    "Navigation", ("Data Exploration", "Location Optimizer", "TEST"))
 st.sidebar.header("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.
 For this purpose, we leverage a wide range of data points from various pubic data sources such as the Federal Bureau of Statistics.""")
@@ -99,23 +104,31 @@ if nav == "Data Exploration":
 elif nav == "Location Optimizer":
   predictions = load_predictions()
   col1, col2 = st.columns(2)
-  choice_model = col1.selectbox("Select a Model", list(predictions.drop(["GMDNAME", "lat", "lon", "ANZAHL_FILIALEN_MIGROS"], axis=1).columns))
-  choice_option = col2.selectbox("Select a Group", ("Consolidation", "Perfect", "Opportunities"))
+  choice_model = col1.selectbox("Select a Model", list(predictions.drop(
+      ["GMDNAME", "lat", "lon", "ANZAHL_FILIALEN_MIGROS"], axis=1).columns))
+  choice_option = col2.selectbox(
+      "Select a Group", ("Consolidation", "Perfect", "Opportunities"))
 
   if choice_option == "Consolidation":
-    location_data = predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS]
+    location_data = predictions[predictions[choice_model]
+                                < predictions.ANZAHL_FILIALEN_MIGROS]
   elif choice_option == "Perfect":
-    location_data = predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS]
+    location_data = predictions[predictions[choice_model]
+                                == predictions.ANZAHL_FILIALEN_MIGROS]
   elif choice_option == "Opportunities":
-    location_data = predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]
-  
+    location_data = predictions[predictions[choice_model]
+                                > predictions.ANZAHL_FILIALEN_MIGROS]
+
   col1, col2, col3 = st.columns(3)
 
-  col1.metric("# Consolidations", len(predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS]))
-  col2.metric("# Same", len(predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS]))
-  col3.metric("# Opportunities", len(predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]))
+  col1.metric("# Consolidations", len(
+      predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS]))
+  col2.metric("# Same", len(
+      predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS]))
+  col3.metric("# Opportunities", len(
+      predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]))
 
-  st.map(location_data[[choice_model,"lat", "lon"]])
+  st.map(location_data[[choice_model, "lat", "lon"]])
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
 
@@ -133,5 +146,19 @@ elif nav == "Location Optimizer":
   #                          center={"lat": 45.5517, "lon": -73.7073},
   #                          mapbox_style="open-street-map",
   #                          zoom=8.5)
-  
+
   # st.map(fig)
+
+elif nav == "TEST":
+  df = px.data.election()
+  geo_df = gpd.GeoDataFrame.from_features(px.data.election_geojson()["features"]).merge(df, on="district").set_index("district")
+
+  fig = px.choropleth_mapbox(geo_df,
+    geojson=geo_df.geometry,
+    locations=geo_df.index,
+    color="Joly",
+    center={"lat": 45.5517, "lon": -73.7073},
+    mapbox_style="open-street-map",
+    zoom=8.5)
+  st.map(fig)
+  st.write(geo_df)
