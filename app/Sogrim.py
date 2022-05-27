@@ -74,7 +74,7 @@ def get_data_unit(feature):
 
 st.sidebar.title("Sogrim")
 nav = st.sidebar.radio(
-    "Navigation", ("Data Exploration", "Location Optimizer", "TEST"))
+    "Navigation", ("TEST", "Data Exploration", "Location Optimizer"))
 st.sidebar.header("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.
 For this purpose, we leverage a wide range of data points from various pubic data sources such as the Federal Bureau of Statistics.""")
