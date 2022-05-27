@@ -150,9 +150,10 @@ elif nav == "Location Optimizer":
   # st.map(fig)
 
 elif nav == "TEST":
-  # gpd_geojson = load_geojson()
-  # df = load_predictions()
-  # geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+  gpd_geojson = load_geojson()
+  df1 = load_predictions()
+  geo_df1 = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+  st.write(geo_df1)
 
   df = px.data.election()
   geo_df = gpd.GeoDataFrame.from_features(
