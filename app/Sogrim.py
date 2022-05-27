@@ -159,7 +159,7 @@ elif nav == "TEST":
       px.data.election_geojson()["features"]
   ).merge(df, on="district").set_index("district")
 
-  st.write(geo_df[0])
+  st.write(geo_df)
 
   # fig = px.choropleth_mapbox(geo_df,
   #                           geojson=geo_df.geometry,
