@@ -152,8 +152,10 @@ elif nav == "Location Optimizer":
 elif nav == "TEST":
   gpd_geojson = load_geojson()
   df1 = load_predictions()
-  geo_df1 = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
-  st.write(geo_df1)
+  st.write(gpd_geojson)
+  st.wirte(df1)
+  # geo_df1 = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+  # st.write(geo_df1)
 
   df = px.data.election()
   geo_df = gpd.GeoDataFrame.from_features(
