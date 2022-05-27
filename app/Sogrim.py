@@ -171,4 +171,4 @@ elif nav == "TEST":
                             mapbox_style="open-street-map",
                             zoom=8.5)
 
-st.map(fig)
+  st.map(fig)
