@@ -150,21 +150,23 @@ elif nav == "Location Optimizer":
   # st.map(fig)
 
 elif nav == "TEST":
+  # gpd_geojson = load_geojson()
+  # df = load_predictions()
+  # geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
+
   df = px.data.election()
-  st.write(df)
+  geo_df = gpd.GeoDataFrame.from_features(
+      px.data.election_geojson()["features"]
+  ).merge(df, on="district").set_index("district")
 
-  geo_json = px.data.election_geojson()
-  st.write(geo_json)
+  st.write(geo_df[0])
 
-  geo_df = gpd.GeoDataFrame.from_features(px.data.election_geojson()["features"]).merge(df, on="district").set_index("district")
-  st.write(geo_df)
+  # fig = px.choropleth_mapbox(geo_df,
+  #                           geojson=geo_df.geometry,
+  #                           locations=geo_df.index,
+  #                           color="ANZAHL_FILIALEN_MIGROS",
+  #                           center={"lat": 45.5517, "lon": -73.7073},
+  #                           mapbox_style="open-street-map",
+  #                           zoom=8.5)
 
-  fig = px.choropleth_mapbox(geo_df,
-    geojson=geo_df.geometry,
-    locations=geo_df.index,
-    color="Joly",
-    center={"lat": 45.5517, "lon": -73.7073},
-    mapbox_style="open-street-map",
-    zoom=8.5)
-  st.map(fig)
-  st.write(geo_df)
+  # st.map(fig)
