@@ -153,7 +153,7 @@ elif nav == "TEST":
   gpd_geojson = load_geojson()
   df1 = load_predictions()
   st.write(gpd_geojson)
-  geo_df1 = gpd_geojson.merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("gemeinde.NAME").drop("GMDNAME", axis=1, inplace=True)
+  geo_df1 = gpd_geojson.merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("gemeinde.NAME")
   st.write(geo_df1)
 
   # df = px.data.election()
