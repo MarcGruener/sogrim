@@ -153,16 +153,15 @@ elif nav == "TEST":
   gpd_geojson = load_geojson()
   df1 = load_predictions()
   st.write(gpd_geojson)
-  st.json(gpd_geojson)
-  # geo_df1 = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
-  # st.write(geo_df1)
+  geo_df1 = gpd_geojson.merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("gemeinde.NAME")
+  st.write(geo_df1)
 
-  df = px.data.election()
-  geo_df = gpd.GeoDataFrame.from_features(
-      px.data.election_geojson()["features"]
-  ).merge(df, on="district").set_index("district")
+  # df = px.data.election()
+  # geo_df = gpd.GeoDataFrame.from_features(
+  #     px.data.election_geojson()["features"]
+  # ).merge(df, on="district").set_index("district")
 
-  st.write(geo_df)
+  # st.write(geo_df)
 
   # fig = px.choropleth_mapbox(geo_df,
   #                           geojson=geo_df.geometry,
