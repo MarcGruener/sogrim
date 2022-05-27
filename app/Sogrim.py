@@ -152,23 +152,16 @@ elif nav == "Location Optimizer":
 elif nav == "TEST":
   gpd_geojson = load_geojson()
   df1 = load_predictions()
-  st.write(gpd_geojson)
   geo_df1 = gpd_geojson.merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("gemeinde.NAME")
+
   st.write(geo_df1)
+  st.write(geo_df1.geometry)
+  st.write(geo_df1.index)
 
-  # df = px.data.election()
-  # geo_df = gpd.GeoDataFrame.from_features(
-  #     px.data.election_geojson()["features"]
-  # ).merge(df, on="district").set_index("district")
-
-  # st.write(geo_df)
 
   fig = px.choropleth_mapbox(geo_df1,
                             geojson=geo_df1.geometry,
                             locations=geo_df1.index,
-                            color="ANZAHL_FILIALEN_MIGROS",
-                            center={"lat": 45.5517, "lon": -73.7073},
-                            mapbox_style="open-street-map",
-                            zoom=8.5)
+                            color="ANZAHL_FILIALEN_MIGROS")
 
   st.map(fig)
