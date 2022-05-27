@@ -152,8 +152,13 @@ elif nav == "Location Optimizer":
 elif nav == "TEST":
   df = px.data.election()
   st.write(df)
-  # geo_df = gpd.GeoDataFrame.from_features(px.data.election_geojson()["features"]).merge(df, on="district").set_index("district")
 
+  geo_json = px.data.election_geojson()
+  st.write(geo_json)
+
+  geo_df = gpd.GeoDataFrame.from_features(px.data.election_geojson()["features"]).merge(df, on="district").set_index("district")
+  st.write(geo_df)
+  
   # fig = px.choropleth_mapbox(geo_df,
   #   geojson=geo_df.geometry,
   #   locations=geo_df.index,
