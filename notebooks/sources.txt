@@ -1,0 +1,8 @@
+Income                                      https://www.atlas.bfs.admin.ch/maps/13/de/14071_9164_8282_8281/22565.html
+Population Schweiz Regionalporträts 2021    https://www.bfs.admin.ch/bfs/de/home/statistiken/kataloge-datenbanken/publikationen.assetdetail.15864450.html
+Public Transportation                       https://www.bav.admin.ch/bav/de/home/allgemeine-themen/fachthemen/geoinformation/geobasisdaten/haltestellen-des-oeffentlichen-verkehrs.html
+Geo datenbanken                             https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson
+Migros_Stores                               https://filialen.migros.ch/de/center:46.8182,8.2275/zoom:8/
+Coop_Stroes                                 https://www.coop.ch/en/store-finder
+Denner_Stroes                               https://www.denner.ch/de/filialen/
+Spar_Stores                                 https://www.spar.ch/standorte
