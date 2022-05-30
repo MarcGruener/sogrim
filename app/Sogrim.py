@@ -11,14 +11,12 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_data():
   with open('./app/data.json') as f:
     json_data = json.load(f)
     gpd_data = gpd.GeoDataFrame.from_features(json_data["features"]).set_index("gemeinde.NAME")
     return gpd_data
-
 
 @st.cache
 def get_data_unit(feature):
@@ -50,7 +48,7 @@ def get_data_unit(feature):
 
 st.sidebar.title("Sogrim")
 nav = st.sidebar.radio(
-    "Navigation", ("TEST", "Data Exploration", "Location Optimizer"))
+    "Navigation", ("Data Exploration", "Location Optimizer"))
 st.sidebar.header("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.
 For this purpose, we leverage a wide range of data points from various pubic data sources such as the Federal Bureau of Statistics.""")
@@ -79,20 +77,9 @@ if nav == "Data Exploration":
   st.dataframe(data)
 
 elif nav == "Location Optimizer":
-  col1, col2 = st.columns(2)
-  choice_model = col1.selectbox("Select a Model", ["linregModel","knnModel","rfModel","xgbrModel","ensemble"])
-  choice_option = col2.selectbox(
-      "Select a Group", ("Consolidation", "Perfect", "Opportunities"))
+  choice_model = st.selectbox("Select a Model", ["linregModel","knnModel","rfModel","xgbrModel","ensemble"])
 
-  if choice_option == "Consolidation":
-    location_data = data[data[choice_model]
-                                < data.ANZAHL_FILIALEN_MIGROS]
-  elif choice_option == "Perfect":
-    location_data = data[data[choice_model]
-                                == data.ANZAHL_FILIALEN_MIGROS]
-  elif choice_option == "Opportunities":
-    location_data = data[data[choice_model]
-                                > data.ANZAHL_FILIALEN_MIGROS]
+  map_data = data[choice_model]
 
   col1, col2, col3 = st.columns(3)
 
@@ -103,16 +90,17 @@ elif nav == "Location Optimizer":
   col3.metric("# Opportunities", len(
       data[data[choice_model] > data.ANZAHL_FILIALEN_MIGROS]))
 
-  fig = px.choropleth_mapbox(location_data,
-                           geojson=location_data.geometry,
-                           locations=location_data.index,
-                           color="ANZAHL_FILIALEN_MIGROS",
+  fig = px.choropleth_mapbox(map_data,
+                           geojson=map_data.geometry,
+                           locations=map_data.index,
+                           color=choice_model,
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
                            zoom=7,
-                           color_continuous_scale="Viridis",
+                           color_continuous_scale=["red", "green", "blue"],
+                           color_continuous_midpoint=0,
                            opacity=0.5,width=1600, height=800)
 
   st.plotly_chart(fig)
 
-  st.dataframe(location_data.drop(["lat", "lon"], axis=1))
+  st.dataframe(map_data)
