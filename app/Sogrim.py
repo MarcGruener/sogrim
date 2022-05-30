@@ -118,6 +118,7 @@ elif nav == "Location Optimizer":
   # st.map(fig)
 
 elif nav == "TEST":
+  st.write(data)
   fig = px.choropleth_mapbox(data,
                            geojson=data.geometry,
                            locations=data.index,
