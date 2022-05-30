@@ -121,7 +121,7 @@ elif nav == "TEST":
   st.write(data)
   fig = px.choropleth_mapbox(data,
                            geojson=data.geometry,
-                           locations=data.index,
+                           locations=data["gemeinde.NAME"],
                            color="ANZAHL_FILIALEN_MIGROS",
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
