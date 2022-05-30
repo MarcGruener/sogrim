@@ -16,7 +16,7 @@ st.set_page_config(
 def load_data():
   with open('./app/data.json') as f:
     json_data = json.load(f)
-    gpd_data = gpd.GeoDataFrame.from_features(json_data["features"])
+    gpd_data = gpd.GeoDataFrame.from_features(json_data["features"]).set_index("gemeinde.NAME")
     return gpd_data
 
 
@@ -122,7 +122,7 @@ elif nav == "TEST":
   st.write(data)
   fig = px.choropleth_mapbox(test,
                            geojson=test.geometry,
-                           locations=test["gemeinde.NAME"],
+                           locations=test.index,
                            color="ANZAHL_FILIALEN_MIGROS",
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
@@ -130,4 +130,4 @@ elif nav == "TEST":
                            color_continuous_scale="Viridis",
                            opacity=0.5)
 
-  st.map(fig)
+  st.plotly_chart(fig)
