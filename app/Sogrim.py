@@ -91,7 +91,7 @@ elif nav == "Location Optimizer":
   fig = px.choropleth_mapbox(data,
                            geojson=data.geometry,
                            locations=data.index,
-                           color=(data.ANZAHL_FILIALEN_MIGROS-data.choice_model),
+                           color=(data.ANZAHL_FILIALEN_MIGROS-data[choice_model]),
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
                            zoom=7,
