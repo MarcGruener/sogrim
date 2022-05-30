@@ -1,10 +1,6 @@
-from calendar import c
-from cmath import sqrt
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from urllib.request import urlopen
-from shapely.geometry import Polygon, MultiPolygon, shape, Point
 import geopandas as gpd
 import json
 
@@ -17,31 +13,10 @@ st.set_page_config(
 
 
 @st.cache
-def load_all_data():
-  data = pd.read_csv("./app/data.csv")
-  data.rename(columns={"LAT_CNTR": "lat", "LONG_CNTR": "lon"}, inplace=True)
-  return data
-
-
-@st.cache
-def load_predictions():
-  data = pd.read_csv("./app/predictions.csv")
-  data.rename(columns={"LAT_CNTR": "lat", "LONG_CNTR": "lon"}, inplace=True)
-  return data
-
-
-@st.cache
-def load_aggregated():
-  data = pd.read_csv("./app/aggregated.csv")
-  return data
-
-
-@st.cache
-def load_geojson():
-  with urlopen('https://datahub.io/cividi/ch-municipalities/r/gemeinden-geojson.geojson') as response:
-    json_data = json.load(response)
-    gdf_data = gpd.GeoDataFrame.from_features(json_data)
-  return gdf_data
+def load_data():
+  json_data = json.loads("./app/data.json")
+  gpd_data = gpd.form_features(json_data.features)
+  return gpd_data
 
 
 @st.cache
@@ -79,65 +54,57 @@ st.sidebar.header("About")
 st.sidebar.write("""The purpose of SOGRIM is to help Migros optimize their store locations.
 For this purpose, we leverage a wide range of data points from various pubic data sources such as the Federal Bureau of Statistics.""")
 
+data = load_data()
+
 if nav == "Data Exploration":
   st.write("This is Data Exploration")
-  all_data = load_all_data()
-  choice_data_exp = st.selectbox("Select a Feature", list(all_data.columns))
+  choice_data_exp = st.selectbox("Select a Feature", list(data.columns))
   col1, col2, col3, col4, col5, col6 = st.columns(6)
-  col1.metric("Min", str(all_data[choice_data_exp].min().round(
+  col1.metric("Min", str(data[choice_data_exp].min().round(
       2))+" "+get_data_unit(choice_data_exp))
-  col2.metric("q1", str(all_data[choice_data_exp].quantile(
+  col2.metric("q1", str(data[choice_data_exp].quantile(
       q=0.25).round(2))+" "+get_data_unit(choice_data_exp))
-  col3.metric("Average", str(all_data[choice_data_exp].mean().round(
+  col3.metric("Average", str(data[choice_data_exp].mean().round(
       2))+" "+get_data_unit(choice_data_exp))
-  col4.metric("q3", str(all_data[choice_data_exp].quantile(
+  col4.metric("q3", str(data[choice_data_exp].quantile(
       q=0.75).round(2))+" "+get_data_unit(choice_data_exp))
-  col5.metric("Max", str(all_data[choice_data_exp].max().round(
+  col5.metric("Max", str(data[choice_data_exp].max().round(
       2))+" "+get_data_unit(choice_data_exp))
-  col6.metric("SD", str(all_data[choice_data_exp].std().round(
+  col6.metric("SD", str(data[choice_data_exp].std().round(
       2))+" "+get_data_unit(choice_data_exp))
-  fig = px.histogram(all_data[choice_data_exp], nbins=int(
-      len(all_data[choice_data_exp])**0.5))
+  fig = px.histogram(data[choice_data_exp], nbins=int(
+      len(data[choice_data_exp])**0.5))
   st.plotly_chart(fig, use_container_width=True)
-  st.dataframe(all_data)
+  st.dataframe(data)
 
 elif nav == "Location Optimizer":
-  predictions = load_predictions()
   col1, col2 = st.columns(2)
-  choice_model = col1.selectbox("Select a Model", list(predictions.drop(
-      ["GMDNAME", "lat", "lon", "ANZAHL_FILIALEN_MIGROS"], axis=1).columns))
+  choice_model = col1.selectbox("Select a Model", ["linregModel","knnModel","rfModel","xgbrModel","ensemble"])
   choice_option = col2.selectbox(
       "Select a Group", ("Consolidation", "Perfect", "Opportunities"))
 
   if choice_option == "Consolidation":
-    location_data = predictions[predictions[choice_model]
-                                < predictions.ANZAHL_FILIALEN_MIGROS]
+    location_data = data[data[choice_model]
+                                < data.ANZAHL_FILIALEN_MIGROS]
   elif choice_option == "Perfect":
-    location_data = predictions[predictions[choice_model]
-                                == predictions.ANZAHL_FILIALEN_MIGROS]
+    location_data = data[data[choice_model]
+                                == data.ANZAHL_FILIALEN_MIGROS]
   elif choice_option == "Opportunities":
-    location_data = predictions[predictions[choice_model]
-                                > predictions.ANZAHL_FILIALEN_MIGROS]
+    location_data = data[data[choice_model]
+                                > data.ANZAHL_FILIALEN_MIGROS]
 
   col1, col2, col3 = st.columns(3)
 
   col1.metric("# Consolidations", len(
-      predictions[predictions[choice_model] < predictions.ANZAHL_FILIALEN_MIGROS]))
+      data[data[choice_model] < data.ANZAHL_FILIALEN_MIGROS]))
   col2.metric("# Same", len(
-      predictions[predictions[choice_model] == predictions.ANZAHL_FILIALEN_MIGROS]))
+      data[data[choice_model] == data.ANZAHL_FILIALEN_MIGROS]))
   col3.metric("# Opportunities", len(
-      predictions[predictions[choice_model] > predictions.ANZAHL_FILIALEN_MIGROS]))
+      data[data[choice_model] > data.ANZAHL_FILIALEN_MIGROS]))
 
   st.map(location_data[[choice_model, "lat", "lon"]])
 
   st.dataframe(location_data.drop(["lat", "lon"], axis=1))
-
-  gpd_geojson = load_geojson()
-  st.json(gpd_geojson)
-  st.write(gpd_geojson)
-
-  # df = load_predictions()
-  # geo_df = gpd.GeoDataFrame.from_features(gpd_geojson["features"]).merge(df, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("GMDNAME")
 
   # fig = px.choropleth_mapbox(geo_df,
   #                          geojson=geo_df.geometry,
@@ -150,18 +117,14 @@ elif nav == "Location Optimizer":
   # st.map(fig)
 
 elif nav == "TEST":
-  gpd_geojson = load_geojson()
-  df1 = load_predictions()
-  geo_df1 = gpd_geojson.merge(df1, left_on="gemeinde.NAME", right_on="GMDNAME").set_index("gemeinde.NAME")
-
-  st.write(geo_df1)
-  st.write(geo_df1.geometry)
-  st.write(geo_df1.index)
-
-
-  fig = px.choropleth_mapbox(geo_df1,
-                            geojson=geo_df1.geometry,
-                            locations=geo_df1.index,
-                            color="ANZAHL_FILIALEN_MIGROS")
+  fig = px.choropleth_mapbox(data,
+                           geojson=data.geometry,
+                           locations=data.index,
+                           color="ANZAHL_FILIALEN_MIGROS",
+                           center={"lat": 46.9, "lon": 8.2275},
+                           mapbox_style="open-street-map",
+                           zoom=7,
+                           color_continuous_scale="Viridis",
+                           opacity=0.5)
 
   st.map(fig)
