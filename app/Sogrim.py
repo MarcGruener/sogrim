@@ -103,24 +103,9 @@ elif nav == "Location Optimizer":
   col3.metric("# Opportunities", len(
       data[data[choice_model] > data.ANZAHL_FILIALEN_MIGROS]))
 
-  st.map(location_data[[choice_model, "lat", "lon"]])
-
-  st.dataframe(location_data.drop(["lat", "lon"], axis=1))
-
-  # fig = px.choropleth_mapbox(geo_df,
-  #                          geojson=geo_df.geometry,
-  #                          locations=geo_df.index,
-  #                          color="ANZAHL_FILIALEN_MIGROS",
-  #                          center={"lat": 45.5517, "lon": -73.7073},
-  #                          mapbox_style="open-street-map",
-  #                          zoom=8.5)
-
-  # st.map(fig)
-
-elif nav == "TEST":
-  fig = px.choropleth_mapbox(data,
-                           geojson=data.geometry,
-                           locations=data.index,
+  fig = px.choropleth_mapbox(location_data,
+                           geojson=location_data.geometry,
+                           locations=location_data.index,
                            color="ANZAHL_FILIALEN_MIGROS",
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
@@ -129,3 +114,5 @@ elif nav == "TEST":
                            opacity=0.5,width=1600, height=800)
 
   st.plotly_chart(fig)
+
+  st.dataframe(location_data.drop(["lat", "lon"], axis=1))
