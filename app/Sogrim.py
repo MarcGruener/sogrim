@@ -118,10 +118,11 @@ elif nav == "Location Optimizer":
   # st.map(fig)
 
 elif nav == "TEST":
+  test = data.iloc[0:100]
   st.write(data)
-  fig = px.choropleth_mapbox(data,
-                           geojson=data.geometry,
-                           locations=data["gemeinde.NAME"],
+  fig = px.choropleth_mapbox(test,
+                           geojson=test.geometry,
+                           locations=test["gemeinde.NAME"],
                            color="ANZAHL_FILIALEN_MIGROS",
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
