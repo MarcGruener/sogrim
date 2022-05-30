@@ -57,7 +57,7 @@ data = load_data()
 
 if nav == "Data Exploration":
   st.write("This is Data Exploration")
-  choice_data_exp = st.selectbox("Select a Feature", list(data.columns))
+  choice_data_exp = st.selectbox("Select a Feature", list(data.drop("geometry", axis=1).columns))
   col1, col2, col3, col4, col5, col6 = st.columns(6)
   col1.metric("Min", str(data[choice_data_exp].min().round(
       2))+" "+get_data_unit(choice_data_exp))
@@ -74,7 +74,7 @@ if nav == "Data Exploration":
   fig = px.histogram(data[choice_data_exp], nbins=int(
       len(data[choice_data_exp])**0.5))
   st.plotly_chart(fig, use_container_width=True)
-  st.dataframe(data)
+  st.dataframe(data.drop("geometry", axis=1))
 
 elif nav == "Location Optimizer":
   choice_model = st.selectbox("Select a Model", ["linregModel","knnModel","rfModel","xgbrModel","ensemble"])
@@ -91,7 +91,7 @@ elif nav == "Location Optimizer":
   fig = px.choropleth_mapbox(data,
                            geojson=data.geometry,
                            locations=data.index,
-                           color=choice_model,
+                           color=(data.ANZAHL_FILIALEN_MIGROS-data.choice_model),
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
                            zoom=7,
@@ -101,4 +101,4 @@ elif nav == "Location Optimizer":
 
   st.plotly_chart(fig)
 
-  st.dataframe(data)
+  st.dataframe(data.drop("geometry", axis=1))
