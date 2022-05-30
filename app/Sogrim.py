@@ -16,7 +16,7 @@ st.set_page_config(
 def load_data():
   with open('./app/data.json') as f:
     json_data = json.load(f)
-    gpd_data = gpd.GeoDataFrame.from_features(json_data.features)
+    gpd_data = gpd.GeoDataFrame.from_features(json_data["features"])
     return gpd_data
 
 
