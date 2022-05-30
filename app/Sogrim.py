@@ -57,7 +57,7 @@ data = load_data()
 
 if nav == "Data Exploration":
   st.write("This is Data Exploration")
-  choice_data_exp = st.selectbox("Select a Feature", list(data.drop("geometry", axis=1).columns))
+  choice_data_exp = st.selectbox("Select a Feature", list(data.drop(["geometry","GMDNAME","linregModel","knnModel","rfModel","xgbrModel","ensemble"], axis=1).columns))
   col1, col2, col3, col4, col5, col6 = st.columns(6)
   col1.metric("Min", str(data[choice_data_exp].min().round(
       2))+" "+get_data_unit(choice_data_exp))
@@ -91,7 +91,7 @@ elif nav == "Location Optimizer":
   fig = px.choropleth_mapbox(data,
                            geojson=data.geometry,
                            locations=data.index,
-                           color=(data.ANZAHL_FILIALEN_MIGROS-data[choice_model]),
+                           color=(data[choice_model]-data.ANZAHL_FILIALEN_MIGROS),
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
                            zoom=7,
