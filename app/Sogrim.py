@@ -14,8 +14,8 @@ st.set_page_config(
 
 @st.cache
 def load_data():
-  json_data = json.loads("./app/data.json")
-  gpd_data = gpd.form_features(json_data.features)
+  json_data = json.loads("data.json")
+  gpd_data = gpd.GeoDataFrame.from_features(json_data.features)
   return gpd_data
 
 
