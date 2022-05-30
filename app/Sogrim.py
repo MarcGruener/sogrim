@@ -79,8 +79,6 @@ if nav == "Data Exploration":
 elif nav == "Location Optimizer":
   choice_model = st.selectbox("Select a Model", ["linregModel","knnModel","rfModel","xgbrModel","ensemble"])
 
-  map_data = data[choice_model]
-
   col1, col2, col3 = st.columns(3)
 
   col1.metric("# Consolidations", len(
@@ -90,9 +88,9 @@ elif nav == "Location Optimizer":
   col3.metric("# Opportunities", len(
       data[data[choice_model] > data.ANZAHL_FILIALEN_MIGROS]))
 
-  fig = px.choropleth_mapbox(map_data,
-                           geojson=map_data.geometry,
-                           locations=map_data.index,
+  fig = px.choropleth_mapbox(data,
+                           geojson=data.geometry,
+                           locations=data.index,
                            color=choice_model,
                            center={"lat": 46.9, "lon": 8.2275},
                            mapbox_style="open-street-map",
@@ -103,4 +101,4 @@ elif nav == "Location Optimizer":
 
   st.plotly_chart(fig)
 
-  st.dataframe(map_data)
+  st.dataframe(data)
