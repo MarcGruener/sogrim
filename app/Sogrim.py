@@ -126,6 +126,6 @@ elif nav == "TEST":
                            mapbox_style="open-street-map",
                            zoom=7,
                            color_continuous_scale="Viridis",
-                           opacity=0.5)
+                           opacity=0.5,width=1600, height=800)
 
   st.plotly_chart(fig)
